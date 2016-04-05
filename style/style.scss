@@ -1,0 +1,70 @@
+$primary: #04C2C9;
+$secondary: #E21985;
+$dark: #1b242f;
+
+body {
+  color: #fff;
+  font-family: 'Open Sans';
+  margin: 0px;
+}
+
+.button {
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hexagon {
+  background: url('../img/hexagon.png') center center/contain no-repeat;
+  height: 100px; width: 100px;
+}
+
+.highlight {
+  color: $secondary;
+}
+
+nav {
+  height: 50px;
+  background: #1b242f;
+  border-bottom: 3px solid $primary;
+
+  .wrap {
+    max-width: 1280px;
+    width: 100%;
+  }
+
+  span {
+    margin: 0 20px;
+  }
+
+  .active {
+    color: $secondary;
+  }
+}
+
+section {
+  
+  //HOME 
+  &:nth-of-type(1) {
+    height: 100vh;
+    background: url('../img/filler.png') center center/cover no-repeat;
+
+    .text {
+      margin: 20px 0;
+      font-size: 20pt;
+      font-weight: 300;
+    }
+  }
+
+  //ABOUT
+  &:nth-of-type(2) {
+    height: 900px;
+  }
+}

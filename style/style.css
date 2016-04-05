@@ -1,0 +1,45 @@
+body {
+  color: #fff;
+  font-family: 'Open Sans';
+  margin: 0px; }
+
+.button {
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  border-radius: 3px; }
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.hexagon {
+  background: url("../img/hexagon.png") center center/contain no-repeat;
+  height: 100px;
+  width: 100px; }
+
+.highlight {
+  color: #e21985; }
+
+nav {
+  height: 50px;
+  background: #1b242f;
+  border-bottom: 3px solid #04c2c9; }
+  nav .wrap {
+    max-width: 1280px;
+    width: 100%; }
+  nav span {
+    margin: 0 20px; }
+  nav .active {
+    color: #e21985; }
+
+section:nth-of-type(1) {
+  height: 100vh;
+  background: url("../img/filler.png") center center/cover no-repeat; }
+  section:nth-of-type(1) .text {
+    margin: 20px 0;
+    font-size: 20pt;
+    font-weight: 300; }
+section:nth-of-type(2) {
+  height: 900px; }
