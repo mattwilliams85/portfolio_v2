@@ -26,4 +26,11 @@ $(document).ready(function() {
         scrollTop: $('#' + anchor).offset().top
     }, 300);
   });
+
+  //GALLERY
+  $('#gallery').mixItUp({
+    // load: {
+    //   filter: '.websites'
+    // }
+  });
 });

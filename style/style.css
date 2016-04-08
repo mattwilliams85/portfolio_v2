@@ -27,11 +27,6 @@ body {
   max-height: 100%;
   box-sizing: border-box; }
 
-.container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0 20px; }
-
 .hexagon {
   background: url("../img/hexagon.png") center center/contain no-repeat;
   height: 100px;
@@ -85,6 +80,10 @@ section {
   color: #616161;
   line-height: 18pt;
   position: relative; }
+  section > div {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px; }
   section:nth-of-type(1) {
     color: #fff;
     height: calc(100vh + 53px);
@@ -112,10 +111,30 @@ section {
         margin: 0 0 10px 0; }
   section:nth-of-type(3) {
     padding: 40px 0;
-    height: 900px;
+    height: 800px;
     background: #04C2C9; }
+    section:nth-of-type(3) button {
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 12pt;
+      border-right: 1px solid #fff;
+      padding: 0 15px;
+      font-weight: 600;
+      cursor: pointer;
+      outline: 0; }
+      section:nth-of-type(3) button:last-of-type {
+        border-right: 0; }
     section:nth-of-type(3) .header {
       color: #fff; }
+    section:nth-of-type(3) #gallery {
+      margin: 35px 0; }
+      section:nth-of-type(3) #gallery .mix {
+        display: none; }
+      section:nth-of-type(3) #gallery .card {
+        height: 200px;
+        width: 250px;
+        background: #fff; }
   section:nth-of-type(4) {
     padding: 40px 0;
     height: 900px; }
