@@ -2,9 +2,28 @@ $primary: #04C2C9;
 $secondary: #E21985;
 $dark: #1B242F;
 
+@mixin pos($pos: absolute, $top: null, $left: null, $bottom: null, $right: null) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: $pos;
+}
+
+@font-face {
+   font-family: 'Raleway';
+   src: url('../fonts/Raleway-Regular.ttf');
+}
+
+@font-face {
+   font-family: 'Raleway-bold';
+   src: url('../fonts/Raleway-Bold.ttf');
+}
+
+
 body {
   color: #fff;
-  font-family: 'Open Sans';
+  font-family: 'Raleway';
   text-align: center;
   margin: 0px;
   -webkit-font-smoothing: antialiased;
@@ -17,7 +36,11 @@ body {
   border-radius: 3px;
 }
 
-.center {
+.bold {
+  font-family: 'Raleway-bold';
+}
+
+.flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,20 +82,16 @@ body {
 }
 
 nav {
+  @include pos($left: 0, $bottom: 0);
   height: 50px;
   width: 100%;
   background: #1b242f;
   border-bottom: 3px solid $primary;
   text-align: left;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   z-index: 99;
 
   &.fixed {
-    top: 0;
-    left: 0;
-    position: fixed;
+    @include pos($pos: fixed, $top: 0, $left: 0);
     animation: slideIn .5s;
   }
 
@@ -127,7 +146,6 @@ section {
   //ABOUT
   &:nth-of-type(2) {
     padding: 40px 0;
-    height: 900px;
     
     .label-wrap {
       > div {
@@ -143,17 +161,39 @@ section {
       margin: 20px 0;
     }
 
-    .portrait {
-      height: 300px;
-      width: 300px;
-      background: url('../img/snow.jpg') center center/cover no-repeat;
-    }
-
     .skills-wrapper {
       padding: 70px 15px;
+      align-items: flex-start;
 
       .label {
         margin: 0 0 10px 0;
+      }
+    }
+
+    .bar {
+      color: #fff;
+      height: 35px;
+      border-radius: 4px;
+      width: 100%;
+      position: relative;
+      background-color: #ccc;
+      margin: 0 0 15px 0;
+
+      &.fill {
+        @include pos($top: 0, $left: 0);
+        background-color: $dark;
+      }
+
+      .tag {
+        @include pos($top: 0, $left: 0);
+        background-color: $primary;
+        line-height: 25pt;
+        height: 35px;
+        width: 110px;
+      }
+
+      span {
+        z-index: 1;
       }
     }
   }
@@ -161,7 +201,6 @@ section {
   //PORTFOLIO
   &:nth-of-type(3) {
     padding: 40px 0;
-    height: 800px;
     background: $primary;
 
     button {
@@ -202,5 +241,30 @@ section {
   &:nth-of-type(4) {
     padding: 40px 0;
     height: 900px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+
+  .center.row-gt-sm {
+    flex-direction: row;
+  }
+
+  .flex-50-gt-sm {
+    -webkit-flex: 1 1 50%;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+    max-width: 50%;
+    max-height: 100%;
+    box-sizing: border-box;
+  }
+
+  // ABOUT
+  section {
+    // &:nth-of-type(2) {
+    //   .flex-50 {
+    //     max-width: 100%;
+    //   }
+    // } 
   }
 }

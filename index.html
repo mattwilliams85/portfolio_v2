@@ -11,19 +11,19 @@
 <body>
 
 <!-- HOME -->
-  <section class="center" id="home">
+  <section class="flex" id="home">
 
     <div class="hexagon"></div>
 
     <div class="text">
-      My name is <span class="highlight">Matthew Williams.</span>
+      My name is <span class="highlight">Matthew Williams</span>.
       <br>
       I'm a full-stack web developer.
     </div>
 
-    <div class="button">Get to know me</div>
+    <div class="button">View my work</div>
 
-    <nav class="center">
+    <nav class="flex">
       <div class="wrap">
         <span class="active">home</span>
         <span>about</span>
@@ -41,35 +41,38 @@
 
       <div class="header">ABOUT</div>
 
-      <div class="center row label-wrap">
-        <div class="center">
+      <div class="flex row label-wrap">
+        <div class="flex row-gt-sm">
+        <div class="flex">
           <div class="hexagon"></div>
           <div class="label">Fast</div>
           <div>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
         </div>
 
-        <div class="center">
+        <div class="flex">
           <div class="hexagon"></div>
           <div class="label">Responsive</div>
           <div>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
         </div>
-
-        <div class="center">
-          <div class="hexagon"></div>
-          <div class="label">Intuitive</div>
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
         </div>
+        <div class="flex row-gt-sm">
+          <div class="flex">
+            <div class="hexagon"></div>
+            <div class="label">Intuitive</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+          </div>
 
-        <div class="center">
-          <div class="hexagon"></div>
-          <div class="label">Dynamic</div>
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+          <div class="flex">
+            <div class="hexagon"></div>
+            <div class="label">Dynamic</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+          </div>
         </div>
       </div>
 
-      <div class="skills-wrapper">
-        <div class="center flex-50">
-          <img src="img/myface.png">
+      <div class="skills-wrapper flex row">
+        <div class="flex flex-50-gt-sm">
+          <img src="img/me.png">
           <img class="up-arrow" src="img/up-arrow.png">
           <div class="label">Who's this guy?</div>
           <div> 
@@ -83,7 +86,20 @@
           </div>
         </div>
 
-        <div class="center flex-50">
+        <div class="flex flex-50-gt-sm">
+          <div class="bar flex">
+            <div class="bar fill" style="width:90%">
+              <div class="tag bold">HTML</div>
+            </div>
+            <span>90%</span>
+          </div>
+
+          <div class="bar flex">
+            <div class="bar fill" style="width:80%">
+              <div class="tag bold">HTML</div>
+            </div>
+            80%
+          </div>
         </div>
       </div>
     </div>
