@@ -23,10 +23,15 @@ body {
   -moz-osx-font-smoothing: grayscale; }
 
 .button {
-  padding: 15px 20px;
+  padding: 10px 20px;
   border: 2px solid #fff;
   border-radius: 3px;
-  font-size: 21pt; }
+  font-size: 16pt;
+  transition: all .5s;
+  cursor: pointer; }
+  .button:hover {
+    background-color: #04c2c9;
+    border-color: #04c2c9; }
 
 .bold {
   font-family: 'Raleway-bold'; }
