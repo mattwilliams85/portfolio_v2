@@ -13,7 +13,7 @@
 <!-- HOME -->
   <section class="flex" id="home">
 
-    <div class="hexagon"></div>
+    <div class="hexagon h2"></div>
 
     <div class="text">
       My name is <span class="highlight">Matthew Williams</span>.
@@ -70,36 +70,93 @@
         </div>
       </div>
 
-      <div class="skills-wrapper flex row">
+      <div class="skills-wrapper flex row-gt-sm">
         <div class="flex flex-50-gt-sm">
-          <img src="img/me.png">
-          <img class="up-arrow" src="img/up-arrow.png">
+          <img src="img/me.png" class="me">
+          <div><img class="up-arrow" src="img/up-arrow.png"></div>
           <div class="label">Who's this guy?</div>
           <div> 
-            Lead Front-end Developer for <a href="http://www.eyecuelab.com">EyeCue Lab</a> in Portland, OR. 
+            I'm the Front-End Developer for <a href="http://www.eyecuelab.com">EyeCue Lab</a> in Portland, OR. 
             <br>
-            Passion for visualizing data, animations, and dynamic user experiences. 
-            <br>
-            Let's turn your great ideas into a great website.
-            <br>
-            <a href="mailto:mattwilliams85@gmail.com">CONTACT ME.</a>
+            I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
+            <br> 
+            <a href="#">Let's make something special</a>
           </div>
         </div>
 
-        <div class="flex flex-50-gt-sm">
+        <div class="flex flex-50-gt-sm bars-wrapper">
           <div class="bar flex">
-            <div class="bar fill" style="width:90%">
-              <div class="tag bold">HTML</div>
+            <div class="bar fill" style="width:80%">
+              <div class="tag bold flex">CSS</div>
+            </div>
+            <span>80%</span>
+          </div> 
+
+          <div class="bar flex">
+            <div class="bar fill" style="width:88%">
+              <div class="tag bold flex">HTML</div>
             </div>
             <span>90%</span>
           </div>
 
+
+          <div class="bar flex">
+            <div class="bar fill" style="width:70%">
+              <div class="tag bold flex">jQuery</div>
+            </div>
+            <span>70%</span>
+          </div>
+
           <div class="bar flex">
             <div class="bar fill" style="width:80%">
-              <div class="tag bold">HTML</div>
+              <div class="tag bold flex">JavaScript</div>
             </div>
-            80%
+            <span>80%</span>
           </div>
+
+          <div class="bar flex">
+            <div class="bar fill" style="width:70%">
+              <div class="tag bold flex">Angular</div>
+            </div>
+            <span>70%</span>
+          </div>
+
+          <div class="bar flex">
+            <div class="bar fill" style="width:50%">
+              <div class="tag bold flex">Node.js</div>
+            </div>
+            <span>50%</span>
+          </div>
+
+
+          <div class="bar flex">
+            <div class="bar fill" style="width:70%">
+              <div class="tag bold flex">Ruby/Rails</div>
+            </div>
+            <span>70%</span>
+          </div>
+
+          <div class="bar flex">
+            <div class="bar fill secondary" style="width:50%">
+              <div class="tag bold flex">Design</div>
+            </div>
+            <span>50%</span>
+          </div>
+
+          <div class="bar flex">
+            <div class="bar fill secondary" style="width:60%">
+              <div class="tag bold flex">Photoshop</div>
+            </div>
+            <span>60%</span>
+          </div>
+
+          <div class="bar flex">
+            <div class="bar fill secondary" style="width:40%">
+              <div class="tag bold flex">Illustrator</div>
+            </div>
+            <span>40%</span>
+          </div>
+
         </div>
       </div>
     </div>
@@ -111,49 +168,67 @@
 
       <div class="header">PROJECTS</div>
 
-      <!-- <button class="filter" data-filter="all">ALL</button> -->
-      <button class="filter" data-filter=".powur"><img src="img/powur.png"></button>
-      <button class="filter" data-filter=".the-mall"><img src="img/the-mall.png"></button>
-      <button class="filter" data-filter=".walk-track"><img src="img/walk-track.png"></button>
-      <button class="filter" data-filter=".roambi"><img src="img/roambi.png"></button>
+      <button class="filter" data-filter="all">ALL</button>
+      <button class="filter" data-filter=".node">NODE.JS</button>
+      <button class="filter" data-filter=".rails">RUBY ON RAILS</button>
+      <button class="filter" data-filter=".js">JAVASCRIPT</button>
+      <!-- <button class="filter" data-filter=".roambi">ROAMBI</button> -->
 
       <div id="gallery">
-        <div class="mix powur" data-my-order="1">
+        <div class="mix node" data-my-order="1">
           <div class="card"></div>
+          <div class="text">
+            <div class="bold">MY STAND</div>
+            <span class="highlight">Node.js on Sails</span>
+          </div>
+          <div class="button">LEARN MORE</div class="button">
         </div>
-        <div class="mix powur" data-my-order="1">
+
+        <div class="mix js" data-my-order="1">
           <div class="card"></div>
+          <div class="text">
+            <div class="bold">NEVER SURRENDER</div>
+            <span class="highlight">Pure JavaScript</span>
+          </div>
+          <div class="button">LEARN MORE</div class="button">
         </div>
-        <div class="mix powur" data-my-order="1">
+
+        <div class="mix js" data-my-order="1">
           <div class="card"></div>
+          <div class="text">
+            <div class="bold">Walker Tracker</div>
+            <span class="highlight">Pure JavaScript</span>
+          </div>
+          <div class="button">LEARN MORE</div class="button">
         </div>
-        <div class="mix the-mall" data-my-order="1">
+
+        <div class="mix rails" data-my-order="1">
           <div class="card"></div>
+          <div class="text">
+            <div class="bold">Powur</div>
+            <span class="highlight">Ruby on Rails + Angular</span>
+          </div>
+          <div class="button">LEARN MORE</div class="button">
         </div>
-        <div class="mix the-mall" data-my-order="1">
+
+        <div class="mix js" data-my-order="1">
           <div class="card"></div>
+          <div class="text">
+            <div class="bold">Roambi</div>
+            <span class="highlight">Pure JavaScript</span>
+          </div>
+          <div class="button">LEARN MORE</div class="button">
         </div>
-        <div class="mix the-mall" data-my-order="1">
+
+        <div class="mix node" data-my-order="1">
           <div class="card"></div>
+          <div class="text">
+            <div class="bold">The Mall</div>
+            <span class="highlight">Node + React.js</span>
+          </div>
+          <div class="button">LEARN MORE</div class="button">
         </div>
-        <div class="mix walk-track" data-my-order="1">
-          <div class="card"></div>
-        </div>
-        <div class="mix walk-track" data-my-order="1">
-          <div class="card"></div>
-        </div>
-        <div class="mix walk-track" data-my-order="1">
-          <div class="card"></div>
-        </div>
-        <div class="mix roambi" data-my-order="1">
-          <div class="card"></div>
-        </div>
-        <div class="mix roambi" data-my-order="1">
-          <div class="card"></div>
-        </div>
-        <div class="mix roambi" data-my-order="1">
-          <div class="card"></div>
-        </div>
+
       </div>
     </div>
   </section>
