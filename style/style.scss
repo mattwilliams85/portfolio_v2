@@ -70,11 +70,11 @@ body {
   }
 }
 
-.flex-50 {
-  -webkit-flex: 1 1 50%;
-  -ms-flex: 1 1 50%;
-  flex: 1 1 50%;
-  max-width: 50%;
+.flex-66 {
+  -webkit-flex: 1 1 66%;
+  -ms-flex: 1 1 66%;
+  flex: 1 1 66%;
+  max-width: 66%;
   max-height: 100%;
   box-sizing: border-box;
 }
@@ -93,10 +93,22 @@ body {
 }
 
 .header {
-  font-size: 22pt;
-  margin: 35px;
-  font-weight: 700;
+  margin: 0 0 80px 0;
+  font-family: 'raleway-bold';
+  font-size: 30pt;
+  position: relative;
   color: #444649;
+  &:before {
+    content: '';
+    width: 70px;
+    height: 4px;
+    background: #444649;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -25px;
+  }
 }
 
 .label {
@@ -104,6 +116,7 @@ body {
   font-weight: 500;
 }
 
+// NAV
 nav {
   @include pos($left: 0, $bottom: 0);
   height: 50px;
@@ -140,8 +153,103 @@ nav {
   }
 }
 
+// MODAL
+.modal-wrap {
+  height: 100vh; width: 100vw;
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+
+  .mask {
+    height: 100%; width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  .modal {
+    max-width: 90%;
+    background: #37404A;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    position: relative;
+    transition: all .3s;
+    transform: scale(0.8);
+    opacity: 0;
+    align-items: flex-start;
+    text-align: left;
+    padding: 70px 50px 100px 50px;
+    box-sizing: border-box;
+  }
+
+  .close {
+    top: -5px;
+    right: 15px;
+    color: #ccc;
+    padding: 15px 10px 10px 10px;
+    background: #222;
+    font-size: 30pt;
+    position: absolute;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .info-box {
+    padding: 15px 0 15px 50px;
+  }
+
+  .header {
+    font-size:24pt;
+    color: #81FFFF;
+    a {
+      color: #50D1F7;
+    }
+  }
+
+  .detail {
+    display: block;
+    font-weight: 300;
+    color: #eee;
+    font-style: italic;
+  }
+
+  ul {
+    margin-top: 15px;
+    li {
+      font-weight: 300;
+      color: #eee;
+    }
+  }
+
+  .carousel {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    padding: 0 1px;
+    visibility: none;
+  }
+
+  &.visible {
+    pointer-events: initial;
+    .modal {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .mask {
+      opacity: 1;
+    }
+  }
+}
+
 section {
-  padding: 100px 0;
+  padding: 130px 0;
   color: #616161;
   line-height: 18pt;
   position: relative;
@@ -206,10 +314,11 @@ section {
 
       .me {
         height: 285px;
+        margin: 0 0 20px 0;
       }
 
       .label {
-        margin: 0 0 10px 0;
+        margin: 20px 0 15px 0;
       }
     }
 
@@ -262,44 +371,27 @@ section {
   &:nth-of-type(3) {
     background: $primary;
 
-    button {
-      background: transparent;
-      border: 0;
-      color: #fff;
-      font-size: 12pt;
-      border-right: 1px solid #fff;
-      padding: 0 15px;
+    .filter {
+      font-size: 13pt;
       font-weight: 600;
+      margin: 0 25px;
+      width: 160px;
+      padding: 7px;
+      color: #fff;
       cursor: pointer;
-      outline: 0;
+      transition: background-color .5s;
 
-      &:last-of-type {
-        border-right: 0;
+      &.active {
+        background: #fff;
+        color: $primary;
       }
     }
 
     .header {
       color: #fff;
-      margin: 35px 0 50px 0;
-    }
-
-    .filter {
-      cursor: pointer;
-      transition: color .5s;
-      &:hover {
-        color: $primary-darker;
-      }
-    }
-
-    .text, .button {
-      z-index: 2;
-      text-align: center;
-      opacity: 0;
-      transition: all 0.3s ease-in-out;
-      color: $primary-darkest;
-
-      .bold {
-        font-size: 16pt;
+      margin-bottom: 100px;
+      &:before {
+        background-color: #FFF;
       }
     }
 
@@ -309,19 +401,30 @@ section {
       width: 100%;
     }
 
-    .button { 
-      @include pos($bottom: 0, $left: 0, $right: 0);
-      border: 2px solid #e21985;
-      border-radius: 2px;
-      width: 170px;
-      margin: 0 auto;
-      font-size: 13pt;
-      padding: 7px 0;
-    }
-    
-
     #gallery {
       margin: 20px 0;
+
+      .text, .button {
+        z-index: 2;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        color: $primary-darkest;
+
+        .bold {
+          font-size: 16pt;
+        }
+      }
+
+      .button { 
+        @include pos($bottom: 0, $left: 0, $right: 0);
+        border: 2px solid #e21985;
+        border-radius: 2px;
+        width: 170px;
+        margin: 0 auto;
+        font-size: 13pt;
+        padding: 7px 0;
+      }
 
       .mix {
         display: none;
@@ -331,7 +434,10 @@ section {
 
 
         .button {
-          color: $primary-darkest;
+          &:hover {
+            background: $secondary;
+            color: #fff;
+          }
         }
         
         @for $i from 1 through 12 {

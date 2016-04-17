@@ -2,15 +2,43 @@
 <html>
 <head>
   <title></title>
-  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" href="style/style.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,600italic,300italic,400italic,300,700italic,800italic,800' rel='stylesheet' type='text/css'>
+  <link href="fonts/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.js"></script>
+  <script src="script.js"></script>
 </head>
 <body>
 
 <!-- HOME -->
+  <div class="modal-wrap flex">
+    <div class="mask"></div>
+    <div class="modal flex row" id="modal">
+      <i class="close mdi mdi-close"></i>
+      <div class="flex-66">
+        <div class="carousel" id="modal-carousel">
+          <div class="slide"><img></div>
+          <div class="slide"><img></div>
+          <div class="slide"><img></div>
+        </div>
+      </div>
+      <div class="flex-33"> 
+        <div class="info-box">
+          <span class="header"><a href="" target="_blank"></a></span>
+          <span class="detail"></span>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section class="flex" id="home">
 
     <div class="hexagon h2"></div>
@@ -73,14 +101,14 @@
       <div class="skills-wrapper flex row-gt-sm">
         <div class="flex flex-50-gt-sm">
           <img src="img/me.png" class="me">
-          <div><img class="up-arrow" src="img/up-arrow.png"></div>
-          <div class="label">Who's this guy?</div>
+          <!-- <div><img class="up-arrow" src="img/up-arrow.png"></div> -->
+          <div class="label bold">Who's this guy?</div>
           <div> 
             I'm the Front-End Developer for <a href="http://www.eyecuelab.com">EyeCue Lab</a> in Portland, OR. 
             <br>
             I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
             <br> 
-            <a href="#">Let's make something special</a>
+            <a href="#">Let's make something special.</a>
           </div>
         </div>
 
@@ -138,7 +166,7 @@
 
           <div class="bar flex">
             <div class="bar fill secondary" style="width:50%">
-              <div class="tag bold flex">Design</div>
+              <div class="tag bold flex">UI Design</div>
             </div>
             <span>50%</span>
           </div>
@@ -168,10 +196,12 @@
 
       <div class="header">PROJECTS</div>
 
-      <button class="filter" data-filter="all">ALL</button>
-      <button class="filter" data-filter=".node">NODE.JS</button>
-      <button class="filter" data-filter=".rails">RUBY ON RAILS</button>
-      <button class="filter" data-filter=".js">JAVASCRIPT</button>
+      <div class="flex row">
+        <div class="filter active" data-filter="all">ALL</div>
+        <div class="filter" data-filter=".node">NODE.JS</div>
+        <div class="filter" data-filter=".rails">RUBY ON RAILS</div>
+        <div class="filter" data-filter=".js">JAVASCRIPT</div>
+      </div>
       <!-- <button class="filter" data-filter=".roambi">ROAMBI</button> -->
 
       <div id="gallery">
