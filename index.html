@@ -17,7 +17,7 @@
   <div class="modal-wrap flex">
     <div class="mask"></div>
     <div class="modal flex row" id="modal">
-      <div class="wrap">
+      <div class="carousel-wrap">
         <div class="window">
           <div id="carousel">
           <div class="slide"></div>
@@ -194,83 +194,126 @@
   </section>
 
 <!-- PORTFOLIO -->
-  <section id="portfolio">
-    <div>
+  <section class="flex" id="portfolio">
 
-      <div class="header">PROJECTS</div>
+    <div class="header">PROJECTS</div>
 
-      <div class="flex row">
-        <div class="filter active" data-filter="all">ALL</div>
-        <div class="filter" data-filter=".node">NODE.JS</div>
-        <div class="filter" data-filter=".rails">RUBY ON RAILS</div>
-        <div class="filter" data-filter=".js">JAVASCRIPT</div>
+    <div class="flex row">
+      <div class="filter active" data-filter="all">ALL</div>
+      <div class="filter" data-filter=".node">NODE.JS</div>
+      <div class="filter" data-filter=".rails">RUBY ON RAILS</div>
+      <div class="filter" data-filter=".js">JAVASCRIPT</div>
+    </div>
+
+    <div id="gallery">
+      <div class="mix node" data-my-order="1">
+        <div class="card"></div>
+        <div class="text">
+          <div class="bold">MY STAND</div>
+          <span class="highlight">Node.js on Sails</span>
+        </div>
+        <div class="button" id="mystand">LEARN MORE</div>
       </div>
-      <!-- <button class="filter" data-filter=".roambi">ROAMBI</button> -->
 
-      <div id="gallery">
-        <div class="mix node" data-my-order="1">
-          <div class="card"></div>
-          <div class="text">
-            <div class="bold">MY STAND</div>
-            <span class="highlight">Node.js on Sails</span>
-          </div>
-          <div class="button" id="mystand">LEARN MORE</div class="button">
+      <div class="mix js" data-my-order="1">
+        <div class="card"></div>
+        <div class="text">
+          <div class="bold">NEVER SURRENDER</div>
+          <span class="highlight">Pure JavaScript</span>
         </div>
+        <div class="button" id="never">LEARN MORE</div>
+      </div>
 
-        <div class="mix js" data-my-order="1">
-          <div class="card"></div>
-          <div class="text">
-            <div class="bold">NEVER SURRENDER</div>
-            <span class="highlight">Pure JavaScript</span>
-          </div>
-          <div class="button" id="never">LEARN MORE</div class="button">
+      <div class="mix js" data-my-order="1">
+        <div class="card"></div>
+        <div class="text">
+          <div class="bold">Walker Tracker</div>
+          <span class="highlight">Pure JavaScript</span>
         </div>
+        <div class="button" id="walker">LEARN MORE</div>
+      </div>
 
-        <div class="mix js" data-my-order="1">
-          <div class="card"></div>
-          <div class="text">
-            <div class="bold">Walker Tracker</div>
-            <span class="highlight">Pure JavaScript</span>
-          </div>
-          <div class="button" id="walker">LEARN MORE</div class="button">
+      <div class="mix rails" data-my-order="1">
+        <div class="card"></div>
+        <div class="text">
+          <div class="bold">Powur</div>
+          <span class="highlight">Ruby on Rails + Angular</span>
         </div>
+        <div class="button" id="powur">LEARN MORE</div>
+      </div>
 
-        <div class="mix rails" data-my-order="1">
-          <div class="card"></div>
-          <div class="text">
-            <div class="bold">Powur</div>
-            <span class="highlight">Ruby on Rails + Angular</span>
-          </div>
-          <div class="button" id="powur">LEARN MORE</div class="button">
+      <div class="mix js" data-my-order="1">
+        <div class="card"></div>
+        <div class="text">
+          <div class="bold">Roambi</div>
+          <span class="highlight">Pure JavaScript</span>
         </div>
+        <div class="button" id="roambi">LEARN MORE</div>
+      </div>
 
-        <div class="mix js" data-my-order="1">
-          <div class="card"></div>
-          <div class="text">
-            <div class="bold">Roambi</div>
-            <span class="highlight">Pure JavaScript</span>
-          </div>
-          <div class="button" id="roambi">LEARN MORE</div class="button">
+      <div class="mix node" data-my-order="1">
+        <div class="card"></div>
+        <div class="text">
+          <div class="bold">The Mall</div>
+          <span class="highlight">Node + React.js</span>
         </div>
-
-        <div class="mix node" data-my-order="1">
-          <div class="card"></div>
-          <div class="text">
-            <div class="bold">The Mall</div>
-            <span class="highlight">Node + React.js</span>
-          </div>
-          <div class="button" id="roambi">LEARN MORE</div class="button">
-        </div>
-
+        <div class="button" id="roambi">LEARN MORE</div>
       </div>
     </div>
   </section>
 
 <!-- BLOG -->
-  <section id="blog">
+  <section id="blog" class="flex">
     <div>
 
       <div class="header">BLOG</div>
+
+      <div class="flex row">
+        <div class="flex-25">
+          <div class="thumb">
+            <div class="gradient"></div>
+          </div>
+          <div class="label bold">This is Your Brain on Caffiene</div>
+          <div class="date">NOVEMBER 30, 2015</div>
+          <div class="bar"></div>
+          <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel porta lacus. Cras vehicula varius nisl at iaculis. 
+          </div>
+        </div>
+        <div class="flex-25">
+          <div class="thumb">
+            <div class="gradient"></div>
+          </div>
+          <div class="label bold">Bowls of Fruit?</div>
+          <div class="date">OCTOBER 3, 2014</div>
+          <div class="bar"></div>
+          <div class="text">
+            Suspendisse potenti. Vestibulum vehicula vehicula tortor. Aliquam maximus porta ante, eu imperdiet quam egestas sed. 
+          </div>
+        </div>
+        <div class="flex-25">
+          <div class="thumb">
+            <div class="gradient"></div>
+          </div>
+          <div class="label bold">Confident Dude is Slick</div>
+          <div class="date">JULY 25, 2014</div>
+          <div class="bar"></div>
+          <div class="text">
+            In quis orci tempor, eleifend felis at, consectetur nibh. Sed bibendum ante quis sapien cursus porta.
+          </div>
+        </div>
+        <div class="flex-25">
+          <div class="thumb">
+            <div class="gradient"></div>
+          </div>
+          <div class="label bold">Money Makes the World Go 'Round</div>
+          <div class="date">APRIL 17, 2014</div>
+          <div class="bar"></div>
+          <div class="text">
+            In egestas massa eu augue lacinia efficitur. Aliquam tempor sapien dignissim purus sollicitudin eleifend. Nullam dapibus libero metus.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

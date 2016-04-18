@@ -1,19 +1,15 @@
 @font-face {
   font-family: 'Raleway';
   src: url("../fonts/Raleway-Regular.ttf"); }
-
 @font-face {
   font-family: 'Raleway-semibold';
   src: url("../fonts/Raleway-SemiBold.ttf"); }
-
 @font-face {
   font-family: 'Raleway-bold';
   src: url("../fonts/Raleway-Bold.ttf"); }
-
 @keyframes slideIn {
   0% {
     transform: translateY(-100px); } }
-
 body {
   color: #fff;
   font-family: 'Raleway';
@@ -30,8 +26,8 @@ body {
   transition: all .5s;
   cursor: pointer; }
   .button:hover {
-    background-color: #04c2c9;
-    border-color: #04c2c9; }
+    background-color: #04C2C9;
+    border-color: #04C2C9; }
 
 .bold {
   font-family: 'Raleway-bold'; }
@@ -44,11 +40,11 @@ body {
   .flex.row {
     flex-direction: row; }
 
-.flex-66 {
-  -webkit-flex: 1 1 66%;
-  -ms-flex: 1 1 66%;
-  flex: 1 1 66%;
-  max-width: 66%;
+.flex-25 {
+  -webkit-flex: 1 1 25%;
+  -ms-flex: 1 1 25%;
+  flex: 1 1 25%;
+  max-width: 25%;
   max-height: 100%;
   box-sizing: border-box; }
 
@@ -61,10 +57,10 @@ body {
     background: url("../img/hex2.png") center center/contain no-repeat; }
 
 .highlight {
-  color: #e21985; }
+  color: #E21985; }
 
 .header {
-  margin: 0 0 80px 0;
+  margin: 0 0 100px 0;
   font-family: 'raleway-bold';
   font-size: 30pt;
   position: relative;
@@ -91,7 +87,7 @@ nav {
   height: 50px;
   width: 100%;
   background: #1b242f;
-  border-bottom: 3px solid #04c2c9;
+  border-bottom: 3px solid #04C2C9;
   text-align: left;
   z-index: 99; }
   nav.fixed {
@@ -108,11 +104,11 @@ nav {
     transition: color .5s;
     text-transform: uppercase; }
     nav span:hover {
-      color: #e21985; }
+      color: #E21985; }
   nav .active {
-    color: #e21985; }
+    color: #E21985; }
 
-.wrap {
+.carousel-wrap {
   position: relative;
   width: 700px;
   height: 440;
@@ -224,7 +220,7 @@ nav {
       opacity: 1; }
 
 section {
-  padding: 130px 0;
+  padding: 100px 0;
   color: #616161;
   line-height: 18pt;
   position: relative; }
@@ -282,26 +278,26 @@ section {
       top: 0;
       left: 0;
       position: absolute;
-      background-color: #00a1a7;
+      background-color: #00A1A7;
       padding: 0; }
     section:nth-of-type(2) .bar .tag {
       top: 0;
       left: 0;
       position: absolute;
-      background-color: #04c2c9;
+      background-color: #04C2C9;
       color: #fff;
       height: 100%;
       width: 110px;
       border-radius: 4px; }
     section:nth-of-type(2) .bar.secondary {
-      background-color: #c51675; }
+      background-color: #C51675; }
       section:nth-of-type(2) .bar.secondary .tag {
-        background-color: #e21985; }
+        background-color: #E21985; }
     section:nth-of-type(2) .bar span {
       z-index: 1;
       padding: 0 15px 0 0; }
   section:nth-of-type(3) {
-    background: #04c2c9; }
+    background: #04C2C9; }
     section:nth-of-type(3) .filter {
       font-size: 13pt;
       font-weight: 600;
@@ -313,10 +309,9 @@ section {
       transition: background-color .5s; }
       section:nth-of-type(3) .filter.active {
         background: #fff;
-        color: #04c2c9; }
+        color: #04C2C9; }
     section:nth-of-type(3) .header {
-      color: #fff;
-      margin-bottom: 100px; }
+      color: #fff; }
       section:nth-of-type(3) .header:before {
         background-color: #FFF; }
     section:nth-of-type(3) .text {
@@ -331,7 +326,7 @@ section {
         text-align: center;
         opacity: 0;
         transition: all 0.3s ease-in-out;
-        color: #1b242f; }
+        color: #1B242F; }
         section:nth-of-type(3) #gallery .text .bold, section:nth-of-type(3) #gallery .button .bold {
           font-size: 16pt; }
       section:nth-of-type(3) #gallery .button {
@@ -351,7 +346,7 @@ section {
         background: #fff;
         margin: 5px; }
         section:nth-of-type(3) #gallery .mix .button:hover {
-          background: #e21985;
+          background: #E21985;
           color: #fff; }
         section:nth-of-type(3) #gallery .mix:nth-child(1) .card {
           background: url("../img/slides/thumb-1.jpg") center center/cover; }
@@ -394,7 +389,47 @@ section {
   section .flex-50-gt-sm {
     display: block; }
   section:nth-of-type(4) {
-    height: 900px; }
+    text-align: left; }
+    section:nth-of-type(4) .flex {
+      align-items: flex-start; }
+    section:nth-of-type(4) .header {
+      text-align: center; }
+    section:nth-of-type(4) .gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%; }
+    section:nth-of-type(4) .flex-25 {
+      margin-right: 20px; }
+      section:nth-of-type(4) .flex-25:nth-child(1) .thumb {
+        background: url("http://img5.visualizeus.com/thumbs/ee/07/tabletops,coffee,cup,red,sweets,photography-ee07bc3f0825363be02be17a37f30038_h.jpg") center center/cover; }
+      section:nth-of-type(4) .flex-25:nth-child(2) .thumb {
+        background: url("http://healtlifetips.com/wp-content/uploads/2015/11/fruit-photography-strawberry-photos-fresh-strawberries-garden-hjhj.jpg") center center/cover; }
+      section:nth-of-type(4) .flex-25:nth-child(3) .thumb {
+        background: url("http://2.bp.blogspot.com/-UsOw3_c_628/USQV8Me46PI/AAAAAAAAW1E/bvR58-JKE2Y/s1600/Harvey+Specter+suits+Harvey+Specter+quotes%252C+suits%252C+mens+suits%252C+suit%252C+designer+suits%252C+suits+tv+show+%25285%2529.jpg") top center/cover; }
+      section:nth-of-type(4) .flex-25:nth-child(4) {
+        margin-right: 0; }
+        section:nth-of-type(4) .flex-25:nth-child(4) .thumb {
+          background: url("http://40.media.tumblr.com/tumblr_m7pl06BEE11qaf6oqo1_500.jpg") center center/cover; }
+    section:nth-of-type(4) .label {
+      line-height: 22pt; }
+    section:nth-of-type(4) .thumb {
+      height: 200px;
+      margin: 0 0 15px 0;
+      -webkit-filter: grayscale(100%); }
+    section:nth-of-type(4) .date {
+      font-size: 8.5pt;
+      font-family: 'Open sans';
+      margin: 5px 0 0 0; }
+    section:nth-of-type(4) .bar {
+      height: 3px;
+      width: 25%;
+      background: #04C2C9;
+      margin: 15px 0px; }
+    section:nth-of-type(4) .text {
+      font-size: 11pt;
+      line-height: 15pt; }
 
 @media screen and (min-width: 960px) {
   .flex.row-gt-sm {
@@ -410,3 +445,5 @@ section {
 
   section:nth-of-type(2) .bars-wrapper {
     margin: 0 0 0 0; } }
+
+/*# sourceMappingURL=style.css.map */

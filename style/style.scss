@@ -70,11 +70,11 @@ body {
   }
 }
 
-.flex-66 {
-  -webkit-flex: 1 1 66%;
-  -ms-flex: 1 1 66%;
-  flex: 1 1 66%;
-  max-width: 66%;
+.flex-25 {
+  -webkit-flex: 1 1 25%;
+  -ms-flex: 1 1 25%;
+  flex: 1 1 25%;
+  max-width: 25%;
   max-height: 100%;
   box-sizing: border-box;
 }
@@ -93,7 +93,7 @@ body {
 }
 
 .header {
-  margin: 0 0 80px 0;
+  margin: 0 0 100px 0;
   font-family: 'raleway-bold';
   font-size: 30pt;
   position: relative;
@@ -151,7 +151,7 @@ nav {
   }
 }
 
-.wrap {
+.carousel-wrap {
   position: relative;
   width: 700px;
   height: 440;
@@ -274,13 +274,6 @@ nav {
   .carousel {
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
   }
-  
-  // .slide img {
-  //   width: 100%;
-  //   height: 100%;
-  //   padding: 0 1px;
-  //   visibility: none;
-  // }
 
   &.visible {
     pointer-events: initial;
@@ -295,7 +288,7 @@ nav {
 }
 
 section {
-  padding: 130px 0;
+  padding: 100px 0;
   color: #616161;
   line-height: 18pt;
   position: relative;
@@ -435,7 +428,6 @@ section {
 
     .header {
       color: #fff;
-      margin-bottom: 100px;
       &:before {
         background-color: #FFF;
       }
@@ -527,7 +519,70 @@ section {
 
   //BLOG
   &:nth-of-type(4) {
-    height: 900px;
+    text-align: left;
+
+    .flex {
+      align-items: flex-start;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    .gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .flex-25 {
+      margin-right: 20px;
+
+      &:nth-child(1) {
+        .thumb { background: url('http://img5.visualizeus.com/thumbs/ee/07/tabletops,coffee,cup,red,sweets,photography-ee07bc3f0825363be02be17a37f30038_h.jpg') center center/cover }
+      }
+      &:nth-child(2) {
+        .thumb { background: url('http://healtlifetips.com/wp-content/uploads/2015/11/fruit-photography-strawberry-photos-fresh-strawberries-garden-hjhj.jpg') center center/cover }
+      }
+      &:nth-child(3) {
+        .thumb { background: url('http://2.bp.blogspot.com/-UsOw3_c_628/USQV8Me46PI/AAAAAAAAW1E/bvR58-JKE2Y/s1600/Harvey+Specter+suits+Harvey+Specter+quotes%252C+suits%252C+mens+suits%252C+suit%252C+designer+suits%252C+suits+tv+show+%25285%2529.jpg') top center/cover }
+      }
+      &:nth-child(4) {
+        margin-right: 0;
+
+        .thumb { background: url('http://40.media.tumblr.com/tumblr_m7pl06BEE11qaf6oqo1_500.jpg') center center/cover }
+      }
+    }
+
+    .label {
+      line-height: 22pt;
+    }
+
+    .thumb {
+      height: 200px;
+      margin: 0 0 15px 0;
+      -webkit-filter: grayscale(100%);
+    }
+
+    .date {
+      font-size: 8.5pt;
+      font-family: 'Open sans';
+      margin: 5px 0 0 0;
+    }
+
+    .bar {
+      height: 3px;
+      width: 25%;
+      background: #04C2C9;
+      margin: 15px 0px;
+    }
+
+    .text {
+      font-size: 11pt;
+      line-height: 15pt;
+    }
   }
 }
 
