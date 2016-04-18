@@ -131,8 +131,6 @@ nav {
     animation: slideIn .5s;
   }
 
-
-
   .wrap {
     max-width: 1170px;
     width: 100%;
@@ -151,6 +149,56 @@ nav {
   .active {
     color: $secondary;
   }
+}
+
+.wrap {
+  position: relative;
+  width: 700px;
+  height: 440;
+  margin: 0 auto;
+  box-shadow:7px 7px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.window {
+  overflow: hidden;
+  position: relative;
+  background: #222;
+}
+
+#carousel {
+  width: 10000px;
+  position: relative;
+  top: 0; left: -700px;
+}
+
+.slide {
+  height: 440px;
+  width: 700px;
+  cursor: pointer;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.mdi-chevron-left, .mdi-chevron-right {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  font-size: 14pt;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 25pt !important;
+  font-weight: bold;
+}
+
+.mdi-chevron-left { left: 0 }
+.mdi-chevron-right { right: 0 }
+
+.transition {
+  transition: .7s;
 }
 
 // MODAL
@@ -224,17 +272,15 @@ nav {
   }
 
   .carousel {
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
   }
   
-  .slide img {
-    width: 100%;
-    height: 100%;
-    padding: 0 1px;
-    visibility: none;
-  }
+  // .slide img {
+  //   width: 100%;
+  //   height: 100%;
+  //   padding: 0 1px;
+  //   visibility: none;
+  // }
 
   &.visible {
     pointer-events: initial;
@@ -402,7 +448,7 @@ section {
     }
 
     #gallery {
-      margin: 20px 0;
+      margin: 25px 0;
 
       .text, .button {
         z-index: 2;
@@ -450,9 +496,10 @@ section {
 
         .card {
           height: 275px;
-          width: 350px;
+          width: 370px;
           cursor: pointer;
           transition: opacity .5s;
+          box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
         }
 
         &:hover {

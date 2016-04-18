@@ -112,6 +112,53 @@ nav {
   nav .active {
     color: #e21985; }
 
+.wrap {
+  position: relative;
+  width: 700px;
+  height: 440;
+  margin: 0 auto;
+  box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.25); }
+
+.window {
+  overflow: hidden;
+  position: relative;
+  background: #222; }
+
+#carousel {
+  width: 10000px;
+  position: relative;
+  top: 0;
+  left: -700px; }
+
+.slide {
+  height: 440px;
+  width: 700px;
+  cursor: pointer;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.mdi-chevron-left, .mdi-chevron-right {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  font-size: 14pt;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 25pt !important;
+  font-weight: bold; }
+
+.mdi-chevron-left {
+  left: 0; }
+
+.mdi-chevron-right {
+  right: 0; }
+
+.transition {
+  transition: .7s; }
+
 .modal-wrap {
   height: 100vh;
   width: 100vw;
@@ -167,14 +214,7 @@ nav {
       font-weight: 300;
       color: #eee; }
   .modal-wrap .carousel {
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25); }
-  .modal-wrap .slide img {
-    width: 100%;
-    height: 100%;
-    padding: 0 1px;
-    visibility: none; }
   .modal-wrap.visible {
     pointer-events: initial; }
     .modal-wrap.visible .modal {
@@ -285,7 +325,7 @@ section {
       position: absolute;
       width: 100%; }
     section:nth-of-type(3) #gallery {
-      margin: 20px 0; }
+      margin: 25px 0; }
       section:nth-of-type(3) #gallery .text, section:nth-of-type(3) #gallery .button {
         z-index: 2;
         text-align: center;
@@ -339,9 +379,10 @@ section {
           background: url("../img/slides/thumb-12.jpg") center center/cover; }
         section:nth-of-type(3) #gallery .mix .card {
           height: 275px;
-          width: 350px;
+          width: 370px;
           cursor: pointer;
-          transition: opacity .5s; }
+          transition: opacity .5s;
+          box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2); }
         section:nth-of-type(3) #gallery .mix:hover .card {
           opacity: 0; }
         section:nth-of-type(3) #gallery .mix:hover .text {
