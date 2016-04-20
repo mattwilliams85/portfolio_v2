@@ -32,6 +32,19 @@ $secondary-dark: #C51675;
   0% { transform: translateY(-100px) }
 }
 
+@keyframes toBottomFromTop {
+  49% {
+    transform: translateY(100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+
 
 body {
   color: #fff;
@@ -40,6 +53,11 @@ body {
   margin: 0px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #009ADA;
+  text-decoration: none;
 }
 
 .button {
@@ -219,16 +237,16 @@ nav {
   }
 
   .modal {
-    max-width: 90%;
+    max-width: 1170px;
     background: #37404A;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     position: relative;
     transition: all .3s;
     transform: scale(0.8);
     opacity: 0;
     align-items: flex-start;
     text-align: left;
-    padding: 70px 50px 100px 50px;
+    padding: 70px 50px 70px 50px;
     box-sizing: border-box;
   }
 
@@ -288,7 +306,7 @@ nav {
 }
 
 section {
-  padding: 100px 0;
+  padding: 100px 0 130px 0;
   color: #616161;
   line-height: 18pt;
   position: relative;
@@ -440,7 +458,7 @@ section {
     }
 
     #gallery {
-      margin: 25px 0;
+      margin: 15px 0;
 
       .text, .button {
         z-index: 2;
@@ -468,7 +486,7 @@ section {
         display: none;
         position: relative;
         background: #fff;
-        margin: 5px;
+        margin: 3px;
 
 
         .button {
@@ -481,7 +499,7 @@ section {
         @for $i from 1 through 12 {
           &:nth-child(#{$i}) {
             .card {
-              background: url('../img/slides/thumb-#{$i}.jpg') center center/cover;
+              background: url('../img/thumb-#{$i}.jpg') center center/cover;
             }
           }
         }
@@ -491,7 +509,7 @@ section {
           width: 370px;
           cursor: pointer;
           transition: opacity .5s;
-          box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
+          // box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
         }
 
         &:hover {
@@ -539,20 +557,21 @@ section {
 
     .flex-25 {
       margin-right: 20px;
+      padding: 0 2px;
 
       &:nth-child(1) {
-        .thumb { background: url('http://img5.visualizeus.com/thumbs/ee/07/tabletops,coffee,cup,red,sweets,photography-ee07bc3f0825363be02be17a37f30038_h.jpg') center center/cover }
+        .thumb { background: url('http://3.bp.blogspot.com/-rWVR2ymwh_4/VHHxo46NndI/AAAAAAAACdk/8MSEMm8HVCk/s800/pcsmash.jpg') center center/cover }
       }
       &:nth-child(2) {
-        .thumb { background: url('http://healtlifetips.com/wp-content/uploads/2015/11/fruit-photography-strawberry-photos-fresh-strawberries-garden-hjhj.jpg') center center/cover }
+        .thumb { background: url('https://labnotebook.s3.amazonaws.com/2015/Mar/coffee_brain-1426812860957.jpg') center center/cover }
       }
       &:nth-child(3) {
-        .thumb { background: url('http://2.bp.blogspot.com/-UsOw3_c_628/USQV8Me46PI/AAAAAAAAW1E/bvR58-JKE2Y/s1600/Harvey+Specter+suits+Harvey+Specter+quotes%252C+suits%252C+mens+suits%252C+suit%252C+designer+suits%252C+suits+tv+show+%25285%2529.jpg') top center/cover }
+        .thumb { background: url('https://labnotebook.s3.amazonaws.com/2015/Mar/handlebars-1425510519141.png') center center/cover }
       }
       &:nth-child(4) {
         margin-right: 0;
 
-        .thumb { background: url('http://40.media.tumblr.com/tumblr_m7pl06BEE11qaf6oqo1_500.jpg') center center/cover }
+        .thumb { background: url('https://labnotebook.s3.amazonaws.com/2015/Feb/toolbelt-1424889682039.png') center center/cover }
       }
     }
 
@@ -563,7 +582,6 @@ section {
     .thumb {
       height: 200px;
       margin: 0 0 15px 0;
-      -webkit-filter: grayscale(100%);
     }
 
     .date {
@@ -582,6 +600,132 @@ section {
     .text {
       font-size: 11pt;
       line-height: 15pt;
+    }
+  }
+
+  //CONTACT
+  &:nth-of-type(5) {
+    background: #2C3744;
+    color: #fff;
+
+    .header {
+      color: #fff;
+      margin: 0 0 40px 0;
+      &:before {
+        background: #fff;
+        width: 110px;
+      }
+    }
+    .highlight {
+      font-weight: 600;
+      color: $primary;
+    }
+
+    form {
+      margin-top: 40px;
+      margin-bottom: 4px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    input, textarea {
+      display: block;
+      width: 100%;
+      border-radius: 4px;
+      outline: none;
+      border: 0;
+      padding: 10px 15px;
+      background: $primary-darkest;
+      font-size: 12pt;
+      margin-bottom: 3px;
+    }
+
+    textarea {
+      min-height: 150px;
+    }
+
+    .button {
+      float: right;
+      margin: 10px -18px;
+      font-size: 12pt;
+      padding: 5px 30px;
+    }
+  }
+}
+
+footer {
+  background: $primary-darkest;
+  padding: 70px 0 50px 0;
+  position: relative;
+
+  .mdi-chevron-double-up {
+    position: absolute;
+    top: -25px;
+    background: #e21985;
+    font-size: 30pt;
+    width: 47px;
+    height: 50px;
+    line-height: 40pt;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .icon-wrap {
+    .icon {
+      overflow: hidden;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+      cursor: pointer;
+      width: 55px;
+      height: 55px;
+      position: relative;
+      text-align: center;
+      margin: 0 15px;
+      background: #262F38;
+      font-size: 18pt;
+      border-radius: 4px;
+    }
+
+    .mdi {
+      text-align: center;
+      color: #fff;
+
+      &.fa-paper-plane {
+        margin-left: -7px;
+      }
+      &.fa-facebook {
+        margin-left: -5px;
+      }
+    }
+
+    .icon:hover {
+      background: $primary;
+      box-shadow: 0 0 0 3px rgba(4,94,201,0.1);
+      -ms-transform: scale(0.9);
+      -webkit-transform: scale(0.9); /* Safari */
+      transform: scale(0.9);
+
+      .mdi {
+        color: #fff;
+      }
+    }
+
+    .icon:hover .mdi {
+      -webkit-animation: toBottomFromTop 0.3s forwards;
+      -moz-animation: toBottomFromTop 0.3s forwards;
+      animation: toBottomFromTop 0.3s forwards;
+    }
+  }
+
+  .footnote {
+    font-size: 10pt;
+    color: #8F9AA7;
+    margin-top: 35px;
+    opacity: 0.6;
+    
+    .highlight {
+      font-family: 'Open Sans';
+      color: $secondary;
     }
   }
 }
