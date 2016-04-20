@@ -63,7 +63,7 @@ a {
 .button {
   padding: 10px 20px;
   border: 2px solid #fff;
-  border-radius: 3px;
+  
   font-size: 16pt;
   transition: all .5s;
   cursor: pointer;
@@ -97,13 +97,41 @@ a {
   box-sizing: border-box;
 }
 
+// .hexagon {
+//   background: url('../img/hexagon.png') center center/contain no-repeat;
+//   height: 95px; width: 95px;
+//   font-size: 32pt;
+//   &.h2 {
+//     background: url('../img/hex2.png') center center/contain no-repeat;
+//   }
+// }
+
 .hexagon {
-  background: url('../img/hexagon.png') center center/contain no-repeat;
-  height: 95px; width: 95px;
-  font-size: 32pt;
-  &.h2 {
-    background: url('../img/hex2.png') center center/contain no-repeat;
-  }
+  position: relative;
+  height: 95px; 
+  width: 54.85px;
+  background-color: #64C7CC;
+  left: 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-top: 47.5px solid transparent;
+  border-bottom: 47.5px solid transparent;
+}
+
+.hexagon:before {
+  right: 100%;
+  border-right: 27.42px solid #64C7CC;
+}
+
+.hexagon:after {
+  left: 100%;
+  width: 0;
+  border-left: 27.42px solid #64C7CC;
 }
 
 .highlight {
@@ -386,8 +414,7 @@ section {
 
     .bar {
       color: #666;
-      height: 35px;
-      border-radius: 4px;
+      height: 33px;
       width: 100%;
       position: relative;
       background-color: #eee;
@@ -407,7 +434,7 @@ section {
         color: #fff;
         height: 100%;
         width: 110px;
-        border-radius: 4px;
+        
       }
 
       &.secondary {
@@ -475,7 +502,7 @@ section {
       .button { 
         @include pos($bottom: 0, $left: 0, $right: 0);
         border: 2px solid #e21985;
-        border-radius: 2px;
+        
         width: 170px;
         margin: 0 auto;
         font-size: 13pt;
@@ -631,7 +658,7 @@ section {
     input, textarea {
       display: block;
       width: 100%;
-      border-radius: 4px;
+      
       outline: none;
       border: 0;
       padding: 10px 15px;
@@ -683,7 +710,7 @@ footer {
       margin: 0 15px;
       background: #262F38;
       font-size: 18pt;
-      border-radius: 4px;
+
     }
 
     .mdi {
