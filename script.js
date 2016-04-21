@@ -33,27 +33,27 @@ $(document).ready(function() {
   // MODAL
   var modalText = {
     roambi: {
-      header: 'Roambi.com',
+      title: 'Roambi.com',
       detail: 'Roambi provides analytics, reporting, and business intelligence for companies to use on the go.',
       bullets: ['PHP & Javascript','Wordpress','Hubspot Integration'],
     },
     walker: {
-      header: 'WalkerTracker',
+      title: 'WalkerTracker',
       detail: 'Walker Tracker offers goal management, fitness tracking, and team competitions to companies for internal use.',
       bullets: ['Node w/Sails','Gamification','Mobile Integration']
     },
     powur: {
-      header: 'Powur.com',
+      title: 'Powur.com',
       detail: 'Powur is a multi-level marketing platform for lead generation, recruitment, and team building.',
       bullets: ['Rails App','Visual Analytics','Team Tree Management System']
     },
     mystand: {
-      header: 'MyStand',
+      title: 'MyStand',
       detail: 'MyStand is a crowd-funding, media sharing website, that has you donating actions instead of money out of your pocket.',
       bullets: ['Node.js on Sails','Social Media & Networking','Crowd-funding']
     },
     never: {
-      header: 'NeverSurrender',
+      title: 'NeverSurrender',
       detail: 'NeverSurrender is a platform for the new ALS foundation mobile app in hopes to raise awareness and research funding to fight ALS.',
       bullets: ['Pure Javascript','Parallax Effects','Fluid Design']
     },
@@ -118,7 +118,7 @@ $(document).ready(function() {
   }
 
   function fillModal(id) {
-    $('#modal .header').text(modalText[id].header);
+    $('#modal .title').text(modalText[id].title);
     $('#modal .detail').text(modalText[id].detail);
 
     $.each($('#modal li'), function(index, value ) {

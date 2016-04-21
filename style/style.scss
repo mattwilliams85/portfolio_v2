@@ -51,6 +51,7 @@ body {
   font-family: 'Raleway';
   text-align: center;
   margin: 0px;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -58,6 +59,17 @@ body {
 a {
   color: #009ADA;
   text-decoration: none;
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  padding: 0;
+  z-index: -1;
+  background: #252934;
 }
 
 .button {
@@ -200,7 +212,7 @@ nav {
 .carousel-wrap {
   position: relative;
   width: 700px;
-  height: 440;
+  height: 450px;
   margin: 0 auto;
   box-shadow:7px 7px 5px 0px rgba(0, 0, 0, 0.25);
 }
@@ -218,7 +230,7 @@ nav {
 }
 
 .slide {
-  height: 440px;
+  height: 450px;
   width: 700px;
   cursor: pointer;
   float: left;
@@ -259,14 +271,14 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.5);
     opacity: 0;
     transition: opacity .3s;
   }
 
   .modal {
-    max-width: 1170px;
-    background: #37404A;
+    max-width: 700px;
+    background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     position: relative;
     transition: all .3s;
@@ -274,8 +286,9 @@ nav {
     opacity: 0;
     align-items: flex-start;
     text-align: left;
-    padding: 70px 50px 70px 50px;
+    top: -10vh;
     box-sizing: border-box;
+    color: #333;
   }
 
   .close {
@@ -291,21 +304,19 @@ nav {
   }
 
   .info-box {
-    padding: 15px 0 15px 50px;
+    padding: 15px 0 15px 35px;
   }
 
-  .header {
+  .title {
     font-size:24pt;
-    color: #81FFFF;
-    a {
-      color: #50D1F7;
-    }
+    line-height: 40pt;
+    color: $secondary;
+    font-weight: 600;
   }
 
   .detail {
     display: block;
     font-weight: 300;
-    color: #eee;
     font-style: italic;
   }
 
@@ -313,7 +324,7 @@ nav {
     margin-top: 15px;
     li {
       font-weight: 300;
-      color: #eee;
+      line-height: 20pt;
     }
   }
 
@@ -339,18 +350,18 @@ section {
   line-height: 18pt;
   position: relative;
 
-  > div {
+  .container {
     max-width: 1170px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
-  //INTRO 
+  //HOME 
   &:nth-of-type(1) {
     padding: 0;
     color: #fff;
     height: calc(100vh + 53px);
-    background: url('../img/filler.png') center center/cover no-repeat;
+    // background: url('../img/filler.png') center center/cover no-repeat;
 
     .highlight {
       font-family: 'Raleway-semibold';
@@ -632,7 +643,7 @@ section {
 
   //CONTACT
   &:nth-of-type(5) {
-    background: #2C3744;
+    background: #252934;
     color: #fff;
 
     .header {
@@ -662,7 +673,7 @@ section {
       outline: none;
       border: 0;
       padding: 10px 15px;
-      background: $primary-darkest;
+      background: #1E242C;
       font-size: 12pt;
       margin-bottom: 3px;
     }

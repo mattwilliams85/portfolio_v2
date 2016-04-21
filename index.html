@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.js"></script>
+  <script src="pt.min.js"></script>
   <script src="script.js"></script>
 </head>
 <body>
@@ -16,7 +17,7 @@
 <!-- HOME -->
   <div class="modal-wrap flex">
     <div class="mask"></div>
-    <div class="modal flex row" id="modal">
+    <div class="modal flex" id="modal">
       <div class="carousel-wrap">
         <div class="window">
           <div id="carousel">
@@ -30,7 +31,7 @@
         
       </div>
       <div class="info-box">
-        <span class="header"><a href="" target="_blank"></a></span>
+        <span class="title"><a href="" target="_blank"></a></span>
         <span class="detail"></span>
         <ul>
           <li></li>
@@ -43,6 +44,7 @@
   </div>
 
   <section id="home" class="flex">
+    <div id="pt" class="canvas"></div>
     <div class="flex">
       <div class="hexagon h2"></div>
 
@@ -69,7 +71,7 @@
 
 <!-- ABOUT -->
   <section id="about">
-    <div>
+    <div class="container">
 
       <div class="header">ABOUT</div>
 
@@ -206,7 +208,7 @@
       <div class="filter" data-filter=".js">JAVASCRIPT</div>
     </div>
 
-    <div id="gallery">
+    <div id="gallery" class="container">
       <div class="mix node" data-my-order="1">
         <div class="card"></div>
         <div class="text">
@@ -267,7 +269,7 @@
 
 <!-- BLOG -->
   <section id="blog" class="flex">
-    <div>
+    <div class="container">
 
       <div class="header">BLOG</div>
 
@@ -368,3 +370,5 @@
 
 </body>
 </html>
+
+<script src="canvas.js"></script>
