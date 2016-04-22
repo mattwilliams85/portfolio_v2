@@ -1,12 +1,5 @@
 IMPORTANT:
 
-Modal Styling 
-  - Modal text content (description, links, role, etc)
-
-Resize Canvas on Window Resize
-
-Navbar active link change on scroll (to match section)
-
 Hexagon Icons
 
 About Me hexagon text
@@ -15,7 +8,7 @@ About Me hexagon text
 
 codepen icon resize
 
-'view my work' icon
+The Mall Content
 
 Responsive Styling!!
 
@@ -34,9 +27,15 @@ Scroll enter animations
 
 Optimize image sizes
 
+Fancy button hover animation
+
 
 
 MAYBE:
+
+Gifs for powur homepage and neversurrender preview? 
+
+DL my resume Link?
 
 Navbar border hue animation?
 
@@ -48,6 +47,8 @@ CLEAN UP:
 
 Remove excess files
 
+Spell Check
 Refactor CSS
 Refactor HTML
-Refactor JS
+Refactor JS - simplify modal fill function
+Debug!

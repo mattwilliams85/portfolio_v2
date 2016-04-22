@@ -44,12 +44,16 @@ a {
 .button {
   padding: 10px 20px;
   border: 2px solid #fff;
+  box-sizing: inherit;
+  display: inline-block;
   font-size: 16pt;
   transition: all .5s;
   cursor: pointer; }
   .button:hover {
     background-color: #04C2C9;
     border-color: #04C2C9; }
+  .button .mdi {
+    vertical-align: middle; }
 
 .bold {
   font-family: 'Raleway-bold'; }
@@ -150,8 +154,7 @@ nav {
   position: relative;
   width: 700px;
   height: 450px;
-  margin: 0 auto;
-  box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.25); }
+  margin: 0 auto; }
 
 .window {
   overflow: hidden;
@@ -182,7 +185,8 @@ nav {
   padding: 10px 15px;
   cursor: pointer;
   font-size: 25pt !important;
-  font-weight: bold; }
+  font-weight: bold;
+  color: #fff; }
 
 .mdi-chevron-left {
   left: 0; }
@@ -218,35 +222,52 @@ nav {
     opacity: 0;
     align-items: flex-start;
     text-align: left;
-    top: -10vh;
+    top: -6vh;
     box-sizing: border-box;
     color: #333; }
   .modal-wrap .close {
-    top: -5px;
-    right: 15px;
-    color: #ccc;
-    padding: 15px 10px 10px 10px;
-    background: #222;
-    font-size: 30pt;
+    bottom: 25px;
+    right: 25px;
+    color: #bbb;
+    font-size: 20pt;
     position: absolute;
     font-weight: 800;
     cursor: pointer; }
   .modal-wrap .info-box {
-    padding: 15px 0 15px 35px; }
+    border-top: 3px solid #1B242F;
+    padding: 35px 60px 20px 25px;
+    box-sizing: border-box;
+    color: #444; }
   .modal-wrap .title {
-    font-size: 24pt;
-    line-height: 40pt;
-    color: #E21985;
-    font-weight: 600; }
-  .modal-wrap .detail {
+    font-size: 22pt;
+    line-height: 30pt;
+    font-family: 'Raleway-bold'; }
+  .modal-wrap .tag {
     display: block;
     font-weight: 300;
-    font-style: italic; }
-  .modal-wrap ul {
+    color: #c0c0c0;
+    font-family: 'Raleway-bold';
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+    font-size: 11pt; }
+  .modal-wrap .detail {
+    font-size: 11pt;
+    line-height: 18pt;
     margin-top: 15px; }
-    .modal-wrap ul li {
-      font-weight: 300;
-      line-height: 20pt; }
+  .modal-wrap .mdi-open-in-new {
+    position: relative;
+    left: -10px;
+    font-size: 11pt; }
+  .modal-wrap .button {
+    padding: 11px 30px;
+    font-size: 10pt;
+    transition: all .5s;
+    cursor: pointer;
+    margin-top: 35px;
+    background: #E21985;
+    color: #fff;
+    font-weight: 600;
+    border: 0; }
   .modal-wrap .carousel {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25); }
   .modal-wrap.visible {
@@ -280,6 +301,16 @@ section {
       transition: transform .9s ease-in-out; }
       section:nth-of-type(1) .hexagon:hover {
         transform: rotate(540deg); }
+    section:nth-of-type(1) .button {
+      padding: 10px 50px 10px 20px;
+      position: relative; }
+      section:nth-of-type(1) .button .mdi {
+        transition: transform .3s;
+        position: absolute;
+        right: 15px;
+        top: 12px; }
+      section:nth-of-type(1) .button:hover .mdi {
+        transform: rotate(90deg); }
   section:nth-of-type(2) .label-wrap > div {
     padding: 0 15px; }
   section:nth-of-type(2) .label-wrap .label {

@@ -75,13 +75,18 @@ a {
 .button {
   padding: 10px 20px;
   border: 2px solid #fff;
-  
+  box-sizing: inherit;
+  display: inline-block;
   font-size: 16pt;
   transition: all .5s;
   cursor: pointer;
   &:hover {
     background-color: $primary;
     border-color: $primary;
+  }
+
+  .mdi {
+    vertical-align: middle;
   }
 }
 
@@ -214,7 +219,7 @@ nav {
   width: 700px;
   height: 450px;
   margin: 0 auto;
-  box-shadow:7px 7px 5px 0px rgba(0, 0, 0, 0.25);
+  // box-shadow:7px 7px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 .window {
@@ -250,6 +255,7 @@ nav {
   cursor: pointer;
   font-size: 25pt !important;
   font-weight: bold;
+  color: #fff;
 }
 
 .mdi-chevron-left { left: 0 }
@@ -286,46 +292,66 @@ nav {
     opacity: 0;
     align-items: flex-start;
     text-align: left;
-    top: -10vh;
+    top: -6vh;
     box-sizing: border-box;
     color: #333;
   }
 
   .close {
-    top: -5px;
-    right: 15px;
-    color: #ccc;
-    padding: 15px 10px 10px 10px;
-    background: #222;
-    font-size: 30pt;
+    bottom: 25px;
+    right: 25px;
+    color: #bbb;
+    font-size: 20pt;
     position: absolute;
     font-weight: 800;
     cursor: pointer;
   }
 
   .info-box {
-    padding: 15px 0 15px 35px;
+    border-top: 3px solid #1B242F;
+    padding: 35px 60px 20px 25px;
+    box-sizing: border-box;
+    color: #444;
   }
 
   .title {
-    font-size:24pt;
-    line-height: 40pt;
-    color: $secondary;
-    font-weight: 600;
+    font-size: 22pt;
+    line-height: 30pt;
+    font-family: 'Raleway-bold';
+  }
+
+  .tag {
+    display: block;
+    font-weight: 300;
+    color: #c0c0c0;
+    font-family: 'Raleway-bold';
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 15px;
+    font-size: 11pt;
   }
 
   .detail {
-    display: block;
-    font-weight: 300;
-    font-style: italic;
+    font-size: 11pt;
+    line-height: 18pt;
+    margin-top: 15px;
   }
 
-  ul {
-    margin-top: 15px;
-    li {
-      font-weight: 300;
-      line-height: 20pt;
-    }
+  .mdi-open-in-new {
+    position: relative;
+    left: -10px;
+    font-size: 11pt;
+  }
+
+  .button {
+    padding: 11px 30px;
+    font-size: 10pt;
+    transition: all .5s;
+    cursor: pointer;
+    margin-top: 35px;
+    background: #E21985;
+    color: #fff;
+    font-weight: 600;
+    border: 0;
   }
 
   .carousel {
@@ -378,6 +404,24 @@ section {
       &:hover {
         transform: rotate(540deg);
       }
+    }
+
+    .button {
+      padding: 10px 50px 10px 20px;
+      position: relative;
+      
+      .mdi {
+        transition: transform .3s;
+        position: absolute;
+        right: 15px;
+        top: 12px;
+      }
+      &:hover {
+        .mdi {
+          transform: rotate(90deg)
+        }
+      }
+
     }
   }
 

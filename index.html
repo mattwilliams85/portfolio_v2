@@ -31,13 +31,10 @@
         
       </div>
       <div class="info-box">
-        <span class="title"><a href="" target="_blank"></a></span>
-        <span class="detail"></span>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <div class="title"></div>
+        <div class="tag"></div>
+        <div class="detail"></div>
+        <div class="button"><i class="mdi mdi-open-in-new"></i>VIEW SITE</div>
       </div>
       <i class="close mdi mdi-close"></i>
     </div>
@@ -54,15 +51,15 @@
         I'm a full-stack web developer.
       </div>
 
-      <div class="button">View my work</div>
+      <div class="button" id="goAbout">View my work <i class="mdi mdi-arrow-right"></i></div>
 
       <nav class="flex">
         <div class="wrap">
-          <span class="active">home</span>
-          <span>about</span>
-          <span>portfolio</span>
-          <span>blog</span>
-          <span>contact</span>
+          <span class="active" id="nav-home">home</span>
+          <span id="nav-about">about</span>
+          <span id="nav-portfolio">portfolio</span>
+          <span id="nav-blog">blog</span>
+          <span id="nav-contact">contact</span>
         </div>
       </nav>
     </div>
@@ -219,11 +216,11 @@
       </div>
 
 
-      <div class="mix js" data-my-order="1">
+      <div class="mix rails" data-my-order="1">
         <div class="card"></div>
         <div class="text">
           <div class="bold">Walker Tracker</div>
-          <span class="highlight">Pure JavaScript</span>
+          <span class="highlight">Ruby on Rails+ JS</span>
         </div>
         <div class="button" id="walker">LEARN MORE</div>
       </div>
@@ -326,7 +323,8 @@
     </div>
   </section>
 
-  <section class="flex" id="portfolio">
+  <!-- CONTACT -->
+  <section class="flex" id="contact">
 
     <div class="header">CONTACT</div>
     <div class="highlight">Have a question or want to work together?</div>

@@ -14,17 +14,46 @@ $(document).ready(function() {
       $('nav').removeClass('fixed');
     }
     lastPos = pos;
+
+    //REFACTOR ME!!!
+    if (pos + 50 > $('#home').offset().top) {
+      $('.active').removeClass('active');
+      $('#nav-home').addClass('active');
+    }
+    if (pos + 50 > $('#about').offset().top) {
+      $('.active').removeClass('active');
+      $('#nav-about').addClass('active');
+    }
+    if (pos + 50 > $('#portfolio').offset().top) {
+      $('.active').removeClass('active');
+      $('#nav-portfolio').addClass('active');
+    }
+    if (pos + 50 > $('#blog').offset().top) {
+      $('.active').removeClass('active');
+      $('#nav-blog').addClass('active');
+    }
+    if (pos + 50 > $('#contact').offset().top || pos + $(window).height() === $(document).height()) {
+      $('.active').removeClass('active');
+      $('#nav-contact').addClass('active');
+    }
   });
 
   // PAGE ANCHORS
   $('nav span').click(function(){
     var anchor = $(this).text();
-    $('nav span').removeClass('active');
-    $(this).addClass('active');
 
     $('html, body').animate({
         scrollTop: $('#' + anchor).offset().top
-    }, 300);
+    }, 400);
+  });
+
+  $('#goAbout').click(function(){
+    $('nav span').removeClass('active');
+    $('#nav-about').addClass('active');
+
+    $('html, body').animate({
+        scrollTop: $('#about').offset().top
+    }, 700);
   });
 
   // GALLERY
@@ -34,27 +63,31 @@ $(document).ready(function() {
   var modalText = {
     roambi: {
       title: 'Roambi.com',
-      detail: 'Roambi provides analytics, reporting, and business intelligence for companies to use on the go.',
-      bullets: ['PHP & Javascript','Wordpress','Hubspot Integration'],
+      tag: 'BUSINESS ANALYTICS.',
+      detail: 'Roambi provides analytics, reporting, and business intelligence for companies to use on the go. A Wordpress hosted site written in PHP and Javascript with Hubspot Integration.'
     },
     walker: {
       title: 'WalkerTracker',
-      detail: 'Walker Tracker offers goal management, fitness tracking, and team competitions to companies for internal use.',
+      tag: 'PERFORMANCE METRICS.',
+      detail: 'Walker Tracker offers goal management, fitness tracking, and team competitions to companies for internal use. A Ruby on Rails and Javascript companion site for the Walker Tracker App. Features visual metrics and gamified progression system.',
       bullets: ['Node w/Sails','Gamification','Mobile Integration']
     },
     powur: {
       title: 'Powur.com',
-      detail: 'Powur is a multi-level marketing platform for lead generation, recruitment, and team building.',
+      tag: 'MULTI-LEVEL MARKETING.',
+      detail: 'Powur is a multi-level marketing platform for lead generation, recruitment, and team building. Built with Ruby on Rails and Angular-UI. Makes use of Angular-material for front-end visuals. Features complex user tree heiarchy and commission system.',
       bullets: ['Rails App','Visual Analytics','Team Tree Management System']
     },
     mystand: {
       title: 'MyStand',
-      detail: 'MyStand is a crowd-funding, media sharing website, that has you donating actions instead of money out of your pocket.',
+      tag: 'CROWD-FUNDED CHARITY',
+      detail: 'MyStand is a crowd-funding, media sharing website, that has you donating actions instead of money out of your pocket. Single page App built with Node.js on Sails and Angular 2.0. Features social media sharing and large scale crowd-funding.',
       bullets: ['Node.js on Sails','Social Media & Networking','Crowd-funding']
     },
     never: {
       title: 'NeverSurrender',
-      detail: 'NeverSurrender is a platform for the new ALS foundation mobile app in hopes to raise awareness and research funding to fight ALS.',
+      tag: 'ALS AWARENESS',
+      detail: 'NeverSurrender is a platform for the new ALS foundation mobile app in hopes to raise awareness and research funding to fight ALS. Pure JavaScript marketing site to promote the new ALS NeverSurrender app.',
       bullets: ['Pure Javascript','Parallax Effects','Fluid Design']
     },
   };
@@ -62,7 +95,7 @@ $(document).ready(function() {
   $('#gallery .button').on('click', function(){
     fillModal(this.id);
     $('.modal-wrap').addClass('visible');
-  })
+  });
 
   $('.close').on('click', function(){
     $('.modal-wrap').removeClass('visible');
@@ -86,13 +119,13 @@ $(document).ready(function() {
     dragStart = event.pageX;
     $(this).on('mousemove', function(){
       dragEnd = event.pageX;
-      $(this).css('transform','translateX('+ dragPos() +'px)')
-    })
+      $(this).css('transform','translateX('+ dragPos() +'px)');
+    });
     $(document).on('mouseup', function(){
       if (dragPos() > threshold) { return shiftSlide(1) }
       if (dragPos() < -threshold) { return shiftSlide(-1) }
       shiftSlide(0);
-    })
+    });
   });
 
   function dragPos() {
@@ -120,6 +153,7 @@ $(document).ready(function() {
   function fillModal(id) {
     $('#modal .title').text(modalText[id].title);
     $('#modal .detail').text(modalText[id].detail);
+    $('#modal .tag').text(modalText[id].tag);
 
     $.each($('#modal li'), function(index, value ) {
       $(this).text(modalText[id].bullets[index]);
