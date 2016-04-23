@@ -43,10 +43,9 @@
   <section id="home" class="flex">
     <div id="pt" class="canvas"></div>
     <div class="flex">
-      <div class="hexagon h2"></div>
 
       <div class="text">
-        My name is <span class="highlight">Matthew Williams</span>.
+        Hello, I'm <span class="highlight">Matthew Williams</span>.
         <br>
         I'm a full-stack web developer.
       </div>
@@ -55,11 +54,11 @@
 
       <nav class="flex">
         <div class="wrap">
-          <span class="active" id="nav-home">home</span>
-          <span id="nav-about">about</span>
-          <span id="nav-portfolio">portfolio</span>
-          <span id="nav-blog">blog</span>
-          <span id="nav-contact">contact</span>
+          <span class="active page-link" dest="home">home</span>
+          <span class="page-link" dest="about">about</span>
+          <span class="page-link" dest="portfolio">portfolio</span>
+          <span class="page-link" dest="blog">blog</span>
+          <span class="page-link" dest="contact">contact</span>
         </div>
       </nav>
     </div>
@@ -74,29 +73,37 @@
 
       <div class="flex row label-wrap">
         <div class="flex row-gt-sm">
-        <div class="flex">
-          <div class="hexagon"></div>
+        <div class="flex hex-wrap">
+          <div class="hexagon">
+            <i class="mdi mdi-speedometer"></i>
+          </div>
           <div class="label bold">Fast</div>
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+          <div>Fast load times and lag free interaction, my highest priority.</div>
         </div>
 
-        <div class="flex">
-          <div class="hexagon"></div>
+        <div class="flex hex-wrap">
+          <div class="hexagon">
+              <i class="mdi mdi-cellphone-link"></i>
+          </div>
           <div class="label bold">Responsive</div>
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+          <div>My layouts will work on any device, big or small.</div>
         </div>
         </div>
         <div class="flex row-gt-sm">
-          <div class="flex">
-            <div class="hexagon"></div>
+          <div class="flex hex-wrap">
+            <div class="hexagon">
+              <i class="mdi mdi-lightbulb-outline"></i>
+            </div>
             <div class="label bold">Intuitive</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+            <div>Strong preference for easy to use, intuitive UX/UI.</div>
           </div>
 
-          <div class="flex">
-            <div class="hexagon"></div>
+          <div class="flex hex-wrap">
+            <div class="hexagon">
+              <i class="mdi mdi-rocket"></i>
+            </div>
             <div class="label bold">Dynamic</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+            <div>Websites don't have to be static, I love making pages come to life.</div>
           </div>
         </div>
       </div>
@@ -107,11 +114,11 @@
           <!-- <div><img class="up-arrow" src="img/up-arrow.png"></div> -->
           <div class="label bold">Who's this guy?</div>
           <div> 
-            I'm the Front-End Developer for <a href="http://www.eyecuelab.com">EyeCue Lab</a> in Portland, OR. 
+            I'm the Front-End Developer for <a class="highlight" href="http://www.eyecuelab.com" target="_blank">EyeCue Lab</a> in Portland, OR. 
             <br>
             I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
             <br> 
-            <a href="#">Let's make something special.</a>
+            <span class="page-link highlight" dest="contact">Let's make something special.</span>
           </div>
         </div>
 
@@ -337,7 +344,7 @@
   </section>
 
   <footer>
-    <i class="mdi mdi-chevron-double-up"></i>
+    <i class="mdi mdi-chevron-double-up page-link" dest="home"></i>
 
     <div class="icon-wrap flex row">
       <a href="https://www.linkedin.com/in/mattwilliams85">

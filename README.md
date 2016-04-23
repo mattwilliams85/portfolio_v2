@@ -1,17 +1,8 @@
 IMPORTANT:
 
-Hexagon Icons
-
-About Me hexagon text
-
-'Let's work together' & footnote nav events
-
-codepen icon resize
-
 The Mall Content
 
 Responsive Styling!!
-
 
 
 SECONDARY:
@@ -19,11 +10,9 @@ SECONDARY:
 slicker thinner look (e.g. progress bars thinner)
 
 Sass Color Shades
-  - Refine site color pallete
+  + Refine site color pallete
 
-Projects filter bar transition
-
-Scroll enter animations
+Scroll enter animations (progress-bars too)
 
 Optimize image sizes
 

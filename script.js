@@ -6,6 +6,7 @@ $(document).ready(function() {
 
   $(window).on('scroll', function () {
     var pos = $(window).scrollTop();
+    var pos2 = pos + 50;
 
     if (pos >= navPos + $('nav').height() && lastPos < pos) {
       $('nav').addClass('fixed');
@@ -15,46 +16,31 @@ $(document).ready(function() {
     }
     lastPos = pos;
 
-    //REFACTOR ME!!!
-    if (pos + 50 > $('#home').offset().top) {
-      $('.active').removeClass('active');
-      $('#nav-home').addClass('active');
-    }
-    if (pos + 50 > $('#about').offset().top) {
-      $('.active').removeClass('active');
-      $('#nav-about').addClass('active');
-    }
-    if (pos + 50 > $('#portfolio').offset().top) {
-      $('.active').removeClass('active');
-      $('#nav-portfolio').addClass('active');
-    }
-    if (pos + 50 > $('#blog').offset().top) {
-      $('.active').removeClass('active');
-      $('#nav-blog').addClass('active');
-    }
-    if (pos + 50 > $('#contact').offset().top || pos + $(window).height() === $(document).height()) {
-      $('.active').removeClass('active');
-      $('#nav-contact').addClass('active');
+    if (pos2 > $('#home').offset().top)       { highlightLink('home') }
+    if (pos2 > $('#about').offset().top)      { highlightLink('about') }
+    if (pos2 > $('#portfolio').offset().top)  { highlightLink('portfolio') }
+    if (pos2 > $('#blog').offset().top)       { highlightLink('blog') }
+    if (pos2 > $('#contact').offset().top || 
+        pos + $(window).height() === $(document).height()) { 
+          highlightLink('contact') 
     }
   });
 
-  // PAGE ANCHORS
-  $('nav span').click(function(){
-    var anchor = $(this).text();
+  function highlightLink(anchor) {
+    $('nav .active').removeClass('active');
+    $("nav").find('[dest="' + anchor + '"]').addClass('active');
+  }
 
-    $('html, body').animate({
-        scrollTop: $('#' + anchor).offset().top
-    }, 400);
-  });
+  $('.page-link').click(function() {
+    var anchor = $(this).attr("dest");
 
-  $('#goAbout').click(function(){
     $('nav span').removeClass('active');
-    $('#nav-about').addClass('active');
+    $("nav").find('[dest="'+ anchor +'"]').addClass('active');
 
     $('html, body').animate({
-        scrollTop: $('#about').offset().top
-    }, 700);
-  });
+      scrollTop: $('#' + anchor).offset().top
+    }, 400);
+  })
 
   // GALLERY
   $('#gallery').mixItUp({ });

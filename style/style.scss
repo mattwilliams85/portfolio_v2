@@ -45,6 +45,10 @@ $secondary-dark: #C51675;
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 
 body {
   color: #fff;
@@ -54,11 +58,6 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  color: #009ADA;
-  text-decoration: none;
 }
 
 .canvas {
@@ -127,7 +126,7 @@ a {
   position: relative;
   height: 95px; 
   width: 54.85px;
-  background-color: #64C7CC;
+  background-color: $primary;
   left: 0;
 }
 
@@ -142,13 +141,13 @@ a {
 
 .hexagon:before {
   right: 100%;
-  border-right: 27.42px solid #64C7CC;
+  border-right: 27.42px solid $primary;
 }
 
 .hexagon:after {
   left: 100%;
   width: 0;
-  border-left: 27.42px solid #64C7CC;
+  border-left: 27.42px solid $primary;
 }
 
 .highlight {
@@ -195,7 +194,7 @@ nav {
   }
 
   .wrap {
-    max-width: 1170px;
+    max-width: 1200px;
     width: 100%;
   }
 
@@ -377,7 +376,7 @@ section {
   position: relative;
 
   .container {
-    max-width: 1170px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
@@ -438,6 +437,14 @@ section {
       }
     }
 
+    .hex-wrap {
+      padding: 0 10px;
+    }
+
+    .highlight {
+      color: #009ADA;
+    }
+
     .up-arrow {
       margin: 15px 0;
       height: 30px;
@@ -465,6 +472,14 @@ section {
     .bars-wrapper {
       margin: 50px 0 0 0;
       width: 90%;
+    }
+
+    .hexagon i {
+      position: absolute;
+      top: 20px;
+      font-size: 40pt;
+      color: #fff;
+      left: 0;
     }
 
     .bar {
@@ -568,8 +583,7 @@ section {
         display: none;
         position: relative;
         background: #fff;
-        margin: 3px;
-
+        margin: 5px;
 
         .button {
           &:hover {
@@ -772,11 +786,8 @@ footer {
       text-align: center;
       color: #fff;
 
-      &.fa-paper-plane {
-        margin-left: -7px;
-      }
-      &.fa-facebook {
-        margin-left: -5px;
+      &.mdi-codepen {
+        font-size: 20pt;
       }
     }
 
