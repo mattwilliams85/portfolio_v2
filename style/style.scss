@@ -102,6 +102,10 @@ body {
   &.row {
     flex-direction: row;
   }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
 }
 
 .flex-25 {
@@ -347,10 +351,15 @@ nav {
     transition: all .5s;
     cursor: pointer;
     margin-top: 35px;
-    background: #E21985;
+    background: $secondary;
     color: #fff;
     font-weight: 600;
     border: 0;
+
+    &:hover {
+      color: $secondary;
+      background: #fff;
+    }
   }
 
   .carousel {
@@ -555,7 +564,7 @@ section {
     }
 
     #gallery {
-      margin: 15px 0;
+      margin: 20px 0;
 
       .text, .button {
         z-index: 2;
@@ -583,7 +592,6 @@ section {
         display: none;
         position: relative;
         background: #fff;
-        margin: 5px;
 
         .button {
           &:hover {
@@ -601,8 +609,8 @@ section {
         }
 
         .card {
-          height: 275px;
-          width: 370px;
+          height: 300px;
+          width: 390px;
           cursor: pointer;
           transition: opacity .5s;
           // box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);

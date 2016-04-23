@@ -1,30 +1,23 @@
 @font-face {
   font-family: 'Raleway';
   src: url("../fonts/Raleway-Regular.ttf"); }
-
 @font-face {
   font-family: 'Raleway-semibold';
   src: url("../fonts/Raleway-SemiBold.ttf"); }
-
 @font-face {
   font-family: 'Raleway-bold';
   src: url("../fonts/Raleway-Bold.ttf"); }
-
 @keyframes slideIn {
   0% {
     transform: translateY(-100px); } }
-
 @keyframes toBottomFromTop {
   49% {
     transform: translateY(100%); }
-
   50% {
     opacity: 0;
     transform: translateY(-100%); }
-
   51% {
     opacity: 1; } }
-
 a {
   text-decoration: none; }
 
@@ -56,8 +49,8 @@ body {
   transition: all .5s;
   cursor: pointer; }
   .button:hover {
-    background-color: #04c2c9;
-    border-color: #04c2c9; }
+    background-color: #04C2C9;
+    border-color: #04C2C9; }
   .button .mdi {
     vertical-align: middle; }
 
@@ -71,6 +64,8 @@ body {
   align-items: center; }
   .flex.row {
     flex-direction: row; }
+  .flex.wrap {
+    flex-wrap: wrap; }
 
 .flex-25 {
   -webkit-flex: 1 1 25%;
@@ -84,7 +79,7 @@ body {
   position: relative;
   height: 95px;
   width: 54.85px;
-  background-color: #04c2c9;
+  background-color: #04C2C9;
   left: 0; }
 
 .hexagon:before,
@@ -97,15 +92,15 @@ body {
 
 .hexagon:before {
   right: 100%;
-  border-right: 27.42px solid #04c2c9; }
+  border-right: 27.42px solid #04C2C9; }
 
 .hexagon:after {
   left: 100%;
   width: 0;
-  border-left: 27.42px solid #04c2c9; }
+  border-left: 27.42px solid #04C2C9; }
 
 .highlight {
-  color: #e21985; }
+  color: #E21985; }
 
 .header {
   margin: 0 0 100px 0;
@@ -135,7 +130,7 @@ nav {
   height: 50px;
   width: 100%;
   background: #1b242f;
-  border-bottom: 3px solid #04c2c9;
+  border-bottom: 3px solid #04C2C9;
   text-align: left;
   z-index: 99; }
   nav.fixed {
@@ -152,9 +147,9 @@ nav {
     transition: color .5s;
     text-transform: uppercase; }
     nav span:hover {
-      color: #e21985; }
+      color: #E21985; }
   nav .active {
-    color: #e21985; }
+    color: #E21985; }
 
 .carousel-wrap {
   position: relative;
@@ -274,6 +269,9 @@ nav {
     color: #fff;
     font-weight: 600;
     border: 0; }
+    .modal-wrap .button:hover {
+      color: #E21985;
+      background: #fff; }
   .modal-wrap .carousel {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25); }
   .modal-wrap.visible {
@@ -361,25 +359,25 @@ section {
       top: 0;
       left: 0;
       position: absolute;
-      background-color: #00a1a7;
+      background-color: #00A1A7;
       padding: 0; }
     section:nth-of-type(2) .bar .tag {
       top: 0;
       left: 0;
       position: absolute;
-      background-color: #04c2c9;
+      background-color: #04C2C9;
       color: #fff;
       height: 100%;
       width: 110px; }
     section:nth-of-type(2) .bar.secondary {
-      background-color: #c51675; }
+      background-color: #C51675; }
       section:nth-of-type(2) .bar.secondary .tag {
-        background-color: #e21985; }
+        background-color: #E21985; }
     section:nth-of-type(2) .bar span {
       z-index: 1;
       padding: 0 15px 0 0; }
   section:nth-of-type(3) {
-    background: #04c2c9; }
+    background: #04C2C9; }
     section:nth-of-type(3) .filter {
       font-size: 13pt;
       font-weight: 600;
@@ -391,7 +389,7 @@ section {
       transition: background-color .5s; }
       section:nth-of-type(3) .filter.active {
         background: #fff;
-        color: #04c2c9; }
+        color: #04C2C9; }
     section:nth-of-type(3) .header {
       color: #fff; }
       section:nth-of-type(3) .header:before {
@@ -402,13 +400,13 @@ section {
       position: absolute;
       width: 100%; }
     section:nth-of-type(3) #gallery {
-      margin: 15px 0; }
+      margin: 20px 0; }
       section:nth-of-type(3) #gallery .text, section:nth-of-type(3) #gallery .button {
         z-index: 2;
         text-align: center;
         opacity: 0;
         transition: all 0.3s ease-in-out;
-        color: #1b242f; }
+        color: #1B242F; }
         section:nth-of-type(3) #gallery .text .bold, section:nth-of-type(3) #gallery .button .bold {
           font-size: 16pt; }
       section:nth-of-type(3) #gallery .button {
@@ -424,10 +422,9 @@ section {
       section:nth-of-type(3) #gallery .mix {
         display: none;
         position: relative;
-        background: #fff;
-        margin: 5px; }
+        background: #fff; }
         section:nth-of-type(3) #gallery .mix .button:hover {
-          background: #e21985;
+          background: #E21985;
           color: #fff; }
         section:nth-of-type(3) #gallery .mix:nth-child(1) .card {
           background: url("../img/thumb-1.jpg") center center/cover; }
@@ -454,8 +451,8 @@ section {
         section:nth-of-type(3) #gallery .mix:nth-child(12) .card {
           background: url("../img/thumb-12.jpg") center center/cover; }
         section:nth-of-type(3) #gallery .mix .card {
-          height: 275px;
-          width: 370px;
+          height: 300px;
+          width: 390px;
           cursor: pointer;
           transition: opacity .5s; }
         section:nth-of-type(3) #gallery .mix:hover .card {
@@ -521,7 +518,7 @@ section {
         width: 110px; }
     section:nth-of-type(5) .highlight {
       font-weight: 600;
-      color: #04c2c9; }
+      color: #04C2C9; }
     section:nth-of-type(5) form {
       margin-top: 40px;
       margin-bottom: 4px;
@@ -545,7 +542,7 @@ section {
       padding: 5px 30px; }
 
 footer {
-  background: #1b242f;
+  background: #1B242F;
   padding: 70px 0 50px 0;
   position: relative; }
   footer .mdi-chevron-double-up {
@@ -576,7 +573,7 @@ footer {
     footer .icon-wrap .mdi.mdi-codepen {
       font-size: 20pt; }
   footer .icon-wrap .icon:hover {
-    background: #04c2c9;
+    background: #04C2C9;
     box-shadow: 0 0 0 3px rgba(4, 94, 201, 0.1);
     -ms-transform: scale(0.9);
     -webkit-transform: scale(0.9);
@@ -595,7 +592,7 @@ footer {
     opacity: 0.6; }
     footer .footnote .highlight {
       font-family: 'Open Sans';
-      color: #e21985; }
+      color: #E21985; }
 
 @media screen and (min-width: 960px) {
   .flex.row-gt-sm {
@@ -611,3 +608,5 @@ footer {
 
   section:nth-of-type(2) .bars-wrapper {
     margin: 0 0 0 0; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -15,12 +15,16 @@ Sass Color Shades
 Scroll enter animations (progress-bars too)
 
 Optimize image sizes
+  + redo portfolio thumbnail size (recolor walkertracker whitespace)
 
-Fancy button hover animation
+Slider animation for portfolio section
 
+change blog thumbnails from links to imgs
 
 
 MAYBE:
+
+Fancy button hover animation?
 
 Gifs for powur homepage and neversurrender preview? 
 
