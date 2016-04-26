@@ -565,7 +565,7 @@ section {
 
   //PORTFOLIO
   &:nth-of-type(3) {
-    background: $primary;
+    background: #384047;
 
     .container {
       padding: 0;
@@ -590,6 +590,7 @@ section {
       position: absolute;
       overflow: hidden;
       height: 25px; 
+      border-radius: 1px;
       background: #fff;
       transition: all .5s ease-in-out;
 
@@ -599,7 +600,7 @@ section {
         margin: auto 0;
         transition: left .5s ease-in-out;
         .filter {
-          color: $primary;
+          color: $secondary;
 
         }
       }
@@ -1055,7 +1056,6 @@ footer {
 
     // PORTFOLIO
     &:nth-of-type(3) {
-      background: $primary;
 
       .filter {
         font-size: 11pt;

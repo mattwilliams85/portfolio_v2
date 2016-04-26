@@ -10,13 +10,16 @@ Sass Color Shades
 
 Scroll enter animations 
 
-Optimize image sizes
-
 New profile pic (me)
 
 carousel bug??
 
-Update 3rd slide for walker
+
+OPTIMIZE: 
+
+Pause Canvas when out of view
+
+Optimize image sizes
 
 
 CLEAN UP:

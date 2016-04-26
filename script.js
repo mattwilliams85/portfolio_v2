@@ -3,7 +3,7 @@ $(document).ready(function() {
   // RESIZE RESETS
   $(window).resize(function(){
     posFilterBar($('.filter').first());
-  })
+  });
 
   // NAV POSITION
   var navPos = $('nav').position().top;
