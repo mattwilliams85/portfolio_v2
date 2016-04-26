@@ -2,22 +2,27 @@
 <html>
 <head>
   <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="stylesheet" href="style/style.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,600italic,300italic,400italic,300,700italic,800italic,800' rel='stylesheet' type='text/css'>
   <link href="fonts/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.js"></script>
   <script src="pt.min.js"></script>
   <script src="script.js"></script>
+  <script src="modal.js"></script>
+
 </head>
 <body>
+<div class="overflow-wrap">
 
 <!-- HOME -->
   <div class="modal-wrap flex">
     <div class="mask"></div>
-    <div class="modal flex" id="modal">
+    <div class="modal" id="modal">
       <div class="carousel-wrap">
         <div class="window">
           <div id="carousel">
@@ -34,7 +39,7 @@
         <div class="title"></div>
         <div class="tag"></div>
         <div class="detail"></div>
-        <div class="button"><i class="mdi mdi-open-in-new"></i>VIEW SITE</div>
+        <a href="#" target="_blank"><div class="button"><i class="mdi mdi-open-in-new"></i>VIEW SITE</div></a>
       </div>
       <i class="close mdi mdi-close"></i>
     </div>
@@ -53,13 +58,14 @@
       <div class="button page-link" dest="about">View my work <i class="mdi mdi-arrow-right"></i></div>
 
       <nav class="flex">
-        <div class="wrap">
-          <span class="active page-link" dest="home">home</span>
-          <span class="page-link" dest="about">about</span>
-          <span class="page-link" dest="portfolio">portfolio</span>
-          <span class="page-link" dest="blog">blog</span>
-          <span class="page-link" dest="contact">contact</span>
+        <div class="link-wrap">
+          <div class="active page-link" dest="home">home</div>
+          <div class="page-link" dest="about">about</div>
+          <div class="page-link" dest="portfolio">portfolio</div>
+          <div class="page-link" dest="blog">blog</div>
+          <div class="page-link" dest="contact">contact</div>
         </div>
+        <i class="mdi mdi-menu"></i>
       </nav>
     </div>
 
@@ -73,34 +79,42 @@
 
       <div class="flex row label-wrap">
         <div class="flex row-gt-sm">
-        <div class="flex hex-wrap">
-          <div class="hexagon">
-            <i class="mdi mdi-speedometer"></i>
+        <div class="flex bullet-wrap">
+          <div class="hex-wrap">
+            <div class="hexagon">
+              <i class="mdi mdi-speedometer"></i>
+            </div>
           </div>
           <div class="label bold">Fast</div>
           <div>Fast load times and lag free interaction, my highest priority.</div>
         </div>
 
-        <div class="flex hex-wrap">
-          <div class="hexagon">
+        <div class="flex bullet-wrap">
+          <div class="hex-wrap">
+            <div class="hexagon">
               <i class="mdi mdi-cellphone-link"></i>
+            </div>
           </div>
           <div class="label bold">Responsive</div>
           <div>My layouts will work on any device, big or small.</div>
         </div>
         </div>
         <div class="flex row-gt-sm">
-          <div class="flex hex-wrap">
-            <div class="hexagon">
-              <i class="mdi mdi-lightbulb-outline"></i>
+          <div class="flex bullet-wrap">
+            <div class="hex-wrap">
+              <div class="hexagon">
+                <i class="mdi mdi-lightbulb-outline"></i>
+              </div>
             </div>
             <div class="label bold">Intuitive</div>
             <div>Strong preference for easy to use, intuitive UX/UI.</div>
           </div>
 
-          <div class="flex hex-wrap">
-            <div class="hexagon">
-              <i class="mdi mdi-rocket"></i>
+          <div class="flex bullet-wrap">
+            <div class="hex-wrap">
+              <div class="hexagon">
+                <i class="mdi mdi-rocket"></i>
+              </div>
             </div>
             <div class="label bold">Dynamic</div>
             <div>Websites don't have to be static, I love making pages come to life.</div>
@@ -124,14 +138,14 @@
 
         <div class="flex flex-50-gt-sm bars-wrapper">
           <div class="bar flex">
-            <div class="bar fill" style="width:80%">
+            <div class="bar fill" style="width:75%">
               <div class="tag bold flex">CSS</div>
             </div>
             <span>80%</span>
           </div> 
 
           <div class="bar flex">
-            <div class="bar fill" style="width:88%">
+            <div class="bar fill" style="width:85%">
               <div class="tag bold flex">HTML</div>
             </div>
             <span>90%</span>
@@ -139,7 +153,7 @@
 
 
           <div class="bar flex">
-            <div class="bar fill" style="width:70%">
+            <div class="bar fill" style="width:65%">
               <div class="tag bold flex">jQuery</div>
             </div>
             <span>70%</span>
@@ -153,14 +167,14 @@
           </div>
 
           <div class="bar flex">
-            <div class="bar fill" style="width:70%">
+            <div class="bar fill" style="width:65%">
               <div class="tag bold flex">Angular</div>
             </div>
             <span>70%</span>
           </div>
 
           <div class="bar flex">
-            <div class="bar fill" style="width:50%">
+            <div class="bar fill" style="width:55%">
               <div class="tag bold flex">Node.js</div>
             </div>
             <span>50%</span>
@@ -168,14 +182,14 @@
 
 
           <div class="bar flex">
-            <div class="bar fill" style="width:70%">
+            <div class="bar fill" style="width:65%">
               <div class="tag bold flex">Ruby/Rails</div>
             </div>
             <span>70%</span>
           </div>
 
           <div class="bar flex">
-            <div class="bar fill secondary" style="width:50%">
+            <div class="bar fill secondary" style="width:55%">
               <div class="tag bold flex">UI Design</div>
             </div>
             <span>50%</span>
@@ -189,7 +203,7 @@
           </div>
 
           <div class="bar flex">
-            <div class="bar fill secondary" style="width:40%">
+            <div class="bar fill secondary" style="width:45%">
               <div class="tag bold flex">Illustrator</div>
             </div>
             <span>40%</span>
@@ -213,15 +227,14 @@
     </div>
 
     <div id="gallery" class="container flex row wrap">
-      <div class="mix node" data-my-order="1">
+      <div class="mix js" data-my-order="1">
         <div class="card"></div>
         <div class="text">
-          <div class="bold">MY STAND</div>
-          <span class="highlight">Node.js on Sails</span>
+          <div class="bold">Roambi</div>
+          <span class="highlight">Pure JavaScript</span>
         </div>
-        <div class="button" id="mystand">LEARN MORE</div>
+        <div class="button" id="roambi">LEARN MORE</div>
       </div>
-
 
       <div class="mix rails" data-my-order="1">
         <div class="card"></div>
@@ -232,13 +245,13 @@
         <div class="button" id="walker">LEARN MORE</div>
       </div>
 
-      <div class="mix js" data-my-order="1">
+      <div class="mix node" data-my-order="1">
         <div class="card"></div>
         <div class="text">
-          <div class="bold">Roambi</div>
-          <span class="highlight">Pure JavaScript</span>
+          <div class="bold">MY STAND</div>
+          <span class="highlight">Node.js on Sails</span>
         </div>
-        <div class="button" id="roambi">LEARN MORE</div>
+        <div class="button" id="mystand">LEARN MORE</div>
       </div>
 
       <div class="mix js" data-my-order="1">
@@ -266,7 +279,7 @@
           <div class="bold">The Mall</div>
           <span class="highlight">Node + React.js</span>
         </div>
-        <div class="button" id="roambi">LEARN MORE</div>
+        <div class="button" id="themall">LEARN MORE</div>
       </div>
     </div>
   </section>
@@ -277,54 +290,58 @@
 
       <div class="header">BLOG</div>
 
-      <div class="flex row">
-        <div class="flex-25">
-          <div class="thumb">
-            <!-- <div class="gradient"></div> -->
+      <div class="flex row wrap">
+        <div class="flex row-gt-sm">
+          <a href="http://blog.eyecuelab.com/2015/03/19/this-is-your-brain-on-caffeine/" target="_blank">
+          <div class="blog-wrap">
+            <div class="thumb" id="thumb-1">
+            </div>
+            <div class="label bold">Breaking Your Coder's Block</div>
+            <div class="date">NOVEMBER 30, 2015</div>
+            <div class="bar"></div>
+            <div class="text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel porta lacus. Cras vehicula varius nisl at iaculis. 
+            </div>
           </div>
-          <div class="label bold">Breaking Your Coder's Block</div>
-          <div class="date">NOVEMBER 30, 2015</div>
-          <div class="bar"></div>
-          <div class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel porta lacus. Cras vehicula varius nisl at iaculis. 
-            <div><a href="#" target="_blank">Read more</a></div>
-          </div>
+          </a>
+          <a href="http://blog.eyecuelab.com/2015/03/19/this-is-your-brain-on-caffeine/" target="_blank">
+            <div class="blog-wrap">
+              <div class="thumb" id="thumb-2">
+              </div>
+              <div class="label bold">!Awake: This is Your Brain on Caffeine</div>
+              <div class="date">MARCH 19, 2015</div>
+              <div class="bar"></div>
+              <div class="text">
+                If there's one thing I can truly claim to be an expert on, it's staying awake. For five years I struggled to stay employed...
+              </div>
+            </div>
+          </a>
         </div>
-        <div class="flex-25">
-          <div class="thumb">
-            <!-- <div class="gradient"></div> -->
-          </div>
-          <div class="label bold">!Awake: This is Your Brain on Caffeine</div>
-          <div class="date">MARCH 19, 2015</div>
-          <div class="bar"></div>
-          <div class="text">
-            If there's one thing I can truly claim to be an expert on, it's staying awake. For five years I struggled to stay employed...
-            <div><a href="http://blog.eyecuelab.com/2015/03/19/this-is-your-brain-on-caffeine/" target="_blank">Read more</a></div>
-          </div>
-        </div>
-        <div class="flex-25">
-          <div class="thumb">
-            <!-- <div class="gradient"></div> -->
-          </div>
-          <div class="label bold">Getting a Handle on Handlebars</div>
-          <div class="date">MARCH 04, 2015<</div>
-          <div class="bar"></div>
-          <div class="text">
-            Here at EyeCue Lab we render most of our data-laden HTML pages in Handlebar templates...
-            <div><a href="http://blog.eyecuelab.com/2015/03/04/getting-a-handle-on-handlebars/" target="_blank">Read more</a></div>
-          </div>
-        </div>
-        <div class="flex-25">
-          <div class="thumb">
-            <!-- <div class="gradient"></div> -->
-          </div>
-          <div class="label bold">5 Extensions for Your Chrome Toolbelt</div>
-          <div class="date">FEBRUARY 23, 2015</div>
-          <div class="bar"></div>
-          <div class="text">
-            If you're not using Google Chrome as a front-end web developer, you're missing out. Not only is Chrome the...
-            <div><a href="http://blog.eyecuelab.com/2015/02/23/essential_extensions/" target="_blank">Read more</a></div>
-          </div>
+        <div class="flex row-gt-sm">
+          <a href="http://blog.eyecuelab.com/2015/03/04/getting-a-handle-on-handlebars/" target="_blank">
+            <div class="blog-wrap">
+              <div class="thumb" id="thumb-3">
+              </div>
+              <div class="label bold">Getting a Handle on Handlebars</div>
+              <div class="date">MARCH 04, 2015</div>
+              <div class="bar"></div>
+              <div class="text">
+                Here at EyeCue Lab we render most of our data-laden HTML pages in Handlebar templates...
+              </div>
+            </div>
+          </a>
+          <a href="http://blog.eyecuelab.com/2015/02/23/essential_extensions/" target="_blank">
+            <div class="blog-wrap">
+              <div class="thumb" id="thumb-4">
+              </div>
+              <div class="label bold">5 Extensions for Your Chrome Toolbelt</div>
+              <div class="date">FEBRUARY 23, 2015</div>
+              <div class="bar"></div>
+              <div class="text">
+                If you're not using Google Chrome as a front-end web developer, you're missing out. Not only is Chrome the...
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -332,15 +349,16 @@
 
   <!-- CONTACT -->
   <section class="flex" id="contact">
-
-    <div class="header">CONTACT</div>
-    <div class="highlight">Have a question or want to work together?</div>
-    <form>
-      <input placeholder="Name"></input>
-      <input placeholder="Enter email"></input>
-      <textarea placeholder="You Message"></textarea>
-      <div class="button">SUBMIT</div>
-    </form>
+    <div class="container">
+      <div class="header">CONTACT</div>
+      <div class="highlight">Have a question or want to work together?</div>
+      <form>
+        <input placeholder="Name"></input>
+        <input placeholder="Enter email"></input>
+        <textarea placeholder="You Message"></textarea>
+        <div class="button">SUBMIT</div>
+      </form>
+    </div>
   </section>
 
   <footer>
@@ -373,6 +391,7 @@
     </div>
   </footer>
 
+</div>
 </body>
 </html>
 

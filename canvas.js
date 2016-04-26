@@ -2,6 +2,9 @@
 var space;
 
 function floatySpace() {
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+   return;
+  }
   //// 1. Define Space and Form
   var colors = {
     a0: "#ff2d5d", a1: "#42dc8e", a2: "#2e43eb", a3: "#ffe359",

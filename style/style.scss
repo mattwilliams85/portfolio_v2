@@ -14,18 +14,18 @@ $secondary-dark: #C51675;
 }
 
 @font-face {
-   font-family: 'Raleway';
-   src: url('../fonts/Raleway-Regular.ttf');
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.ttf');
 }
 
 @font-face {
-   font-family: 'Raleway-semibold';
-   src: url('../fonts/Raleway-SemiBold.ttf');
+  font-family: 'Raleway-semibold';
+  src: url('../fonts/Raleway-SemiBold.ttf');
 }
 
 @font-face {
-   font-family: 'Raleway-bold';
-   src: url('../fonts/Raleway-Bold.ttf');
+  font-family: 'Raleway-bold';
+  src: url('../fonts/Raleway-Bold.ttf');
 }
 
 @keyframes slideIn {
@@ -47,6 +47,7 @@ $secondary-dark: #C51675;
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 
@@ -55,9 +56,14 @@ body {
   font-family: 'Raleway';
   text-align: center;
   margin: 0px;
-  overflow-x: hidden;
+  font-size: 8pt;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.overflow-wrap {
+  overflow-x: hidden;
 }
 
 .canvas {
@@ -66,9 +72,8 @@ body {
   left: 0;
   width: 100vw;
   height: 100%;
-  padding: 0;
   z-index: -1;
-  background: #252934;
+  background: url('../img/filler.png') center center/cover;
 }
 
 .button {
@@ -76,7 +81,7 @@ body {
   border: 2px solid #fff;
   box-sizing: inherit;
   display: inline-block;
-  font-size: 16pt;
+  font-size: 13pt;
   transition: all .5s;
   cursor: pointer;
   &:hover {
@@ -108,50 +113,41 @@ body {
   }
 }
 
-.flex-25 {
-  -webkit-flex: 1 1 25%;
-  -ms-flex: 1 1 25%;
-  flex: 1 1 25%;
-  max-width: 25%;
-  max-height: 100%;
-  box-sizing: border-box;
+.hex-wrap {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
 }
-
-// .hexagon {
-//   background: url('../img/hexagon.png') center center/contain no-repeat;
-//   height: 95px; width: 95px;
-//   font-size: 32pt;
-//   &.h2 {
-//     background: url('../img/hex2.png') center center/contain no-repeat;
-//   }
-// }
 
 .hexagon {
-  position: relative;
-  height: 95px; 
-  width: 54.85px;
   background-color: $primary;
-  left: 0;
-}
-
-.hexagon:before,
-.hexagon:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-top: 47.5px solid transparent;
-  border-bottom: 47.5px solid transparent;
+  height: 100%;
+  width: calc(100% * 0.57735);
+  display: inline-block;
 }
 
 .hexagon:before {
-  right: 100%;
-  border-right: 27.42px solid $primary;
+  position: absolute;
+  top: 0;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  background-color: inherit;
+  height: inherit;
+  width: inherit;
+  content: '';
+  transform: rotateZ(60deg);
 }
 
 .hexagon:after {
-  left: 100%;
-  width: 0;
-  border-left: 27.42px solid $primary;
+  position: absolute;
+  top: 0;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  background-color: inherit;
+  height: inherit;
+  width: inherit;
+  content: '';
+  transform: rotateZ(-60deg);
 }
 
 .highlight {
@@ -159,9 +155,9 @@ body {
 }
 
 .header {
-  margin: 0 0 100px 0;
+  margin: 0 0 75px 0;
+  font-size: 25pt;
   font-family: 'raleway-bold';
-  font-size: 30pt;
   position: relative;
   color: #444649;
   &:before {
@@ -178,7 +174,7 @@ body {
 }
 
 .label {
-  font-size: 18pt;
+  font-size: 14pt;
   font-weight: 500;
 }
 
@@ -187,7 +183,7 @@ nav {
   @include pos($left: 0, $bottom: 0);
   height: 50px;
   width: 100%;
-  background: #1b242f;
+  background: $primary-darkest;
   border-bottom: 3px solid $primary;
   text-align: left;
   z-index: 99;
@@ -197,19 +193,39 @@ nav {
     animation: slideIn .5s;
   }
 
-  .wrap {
+  .link-wrap {
     max-width: 1200px;
     width: 100%;
+    position: absolute;
+    top: 53px;
+    background: #333;
+    overflow: hidden;
+    height: 0;
+    transition: height .3s ease-out;
+    text-align: center;
+
+    &.visible {
+      height: 183px;
+    }
+
+    div {
+      margin: 15px 20px;
+      cursor: pointer;
+      transition: color .5s;
+      text-transform: uppercase;
+      &:hover {
+        color: $secondary;
+      }
+    }
   }
 
-  span {
-    margin: 0 20px;
-    cursor: pointer;
-    transition: color .5s;
-    text-transform: uppercase;
-    &:hover {
-      color: $secondary;
-    }
+  .mdi-menu {
+    position: absolute;
+    right: 5vw;
+    margin: auto 0;
+    font-size: 30pt;
+    line-height: 36pt;
+    top: 0;
   }
 
   .active {
@@ -219,10 +235,8 @@ nav {
 
 .carousel-wrap {
   position: relative;
-  width: 700px;
-  height: 450px;
+  height: 250px;
   margin: 0 auto;
-  // box-shadow:7px 7px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 .window {
@@ -234,12 +248,11 @@ nav {
 #carousel {
   width: 10000px;
   position: relative;
-  top: 0; left: -700px;
+  top: 0;
 }
 
 .slide {
-  height: 450px;
-  width: 700px;
+  height: 250px;
   cursor: pointer;
   float: left;
   display: flex;
@@ -252,11 +265,10 @@ nav {
   cursor: pointer;
   position: absolute;
   bottom: 0;
-  font-size: 14pt;
   background: rgba(0, 0, 0, 0.3);
   padding: 10px 15px;
   cursor: pointer;
-  font-size: 25pt !important;
+  font-size: 14pt !important;
   font-weight: bold;
   color: #fff;
 }
@@ -286,7 +298,6 @@ nav {
   }
 
   .modal {
-    max-width: 700px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     position: relative;
@@ -295,14 +306,14 @@ nav {
     opacity: 0;
     align-items: flex-start;
     text-align: left;
-    top: -6vh;
     box-sizing: border-box;
     color: #333;
+    height: 100vh;
   }
 
   .close {
     bottom: 25px;
-    right: 25px;
+    right: 10px;
     color: #bbb;
     font-size: 20pt;
     position: absolute;
@@ -311,15 +322,15 @@ nav {
   }
 
   .info-box {
-    border-top: 3px solid #1B242F;
-    padding: 35px 60px 20px 25px;
+    border-top: 3px solid $primary-darkest;
+    padding: 15px 10px 85px 10px;
     box-sizing: border-box;
     color: #444;
   }
 
   .title {
-    font-size: 22pt;
-    line-height: 30pt;
+    font-size: 16pt;
+    line-height: 20pt;
     font-family: 'Raleway-bold';
   }
 
@@ -330,13 +341,13 @@ nav {
     font-family: 'Raleway-bold';
     border-bottom: 1px solid rgba(0,0,0,0.1);
     padding-bottom: 15px;
-    font-size: 11pt;
+    font-size: 8pt;
   }
 
   .detail {
-    font-size: 11pt;
-    line-height: 18pt;
-    margin-top: 15px;
+    font-size: 9pt;
+    line-height: 14pt;
+    margin-top: 13px;
   }
 
   .mdi-open-in-new {
@@ -350,11 +361,20 @@ nav {
     font-size: 10pt;
     transition: all .5s;
     cursor: pointer;
-    margin-top: 35px;
     background: $secondary;
     color: #fff;
     font-weight: 600;
     border: 0;
+    pointer-events: none;
+    visibility: hidden;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+
+    &.visible {
+      pointer-events: initial;
+      visibility: visible;
+    }
 
     &:hover {
       color: $secondary;
@@ -379,32 +399,33 @@ nav {
 }
 
 section {
-  padding: 100px 0 130px 0;
+  padding: 70px 0 70px 0;
   color: #616161;
-  line-height: 18pt;
+  line-height: 11pt;
   position: relative;
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   //HOME 
   &:nth-of-type(1) {
-    padding: 0;
+    padding: 0 10px;
     color: #fff;
     height: calc(100vh + 53px);
-    // background: url('../img/filler.png') center center/cover no-repeat;
 
     .highlight {
       font-family: 'Raleway-semibold';
     }
 
     .text {
-      margin: 20px 0;
-      font-size: 32pt;
-      line-height: 36pt;
+      margin: 0 0 20px 0;
+      font-size: 16pt;
+      line-height: 20pt;
     }
 
     .hexagon {
@@ -415,15 +436,17 @@ section {
     }
 
     .button {
-      padding: 10px 50px 10px 20px;
+      padding: 12px 40px 12px 15px;
       position: relative;
+      margin-bottom: 53px;
       
       .mdi {
         transition: transform .3s;
         position: absolute;
         right: 15px;
-        top: 12px;
+        top: 11px;
       }
+
       &:hover {
         .mdi {
           transform: rotate(90deg)
@@ -437,17 +460,16 @@ section {
   &:nth-of-type(2) {
     
     .label-wrap {
-      > div {
-        padding: 0 15px;
-      }
 
       .label {
         margin: 20px 0 10px 0;
       }
     }
 
-    .hex-wrap {
-      padding: 0 10px;
+    .bullet-wrap {
+      justify-content: flex-start;
+      padding: 0 7px;
+      height: 200px;
     }
 
     .highlight {
@@ -460,17 +482,11 @@ section {
     }
 
     .skills-wrapper {
-      padding: 70px 15px;
       align-items: flex-start;
       width: 100%;
 
-      > .flex:first-child {
-        padding: 0 50px 0 50px;
-      }
-
       .me {
-        height: 285px;
-        margin: 0 0 20px 0;
+        height: 200px;
       }
 
       .label {
@@ -478,28 +494,34 @@ section {
       }
     }
 
-    .bars-wrapper {
-      margin: 50px 0 0 0;
-      width: 90%;
-    }
-
     .hexagon i {
       position: absolute;
       top: 20px;
-      font-size: 40pt;
+      font-size: 34pt;
       color: #fff;
       left: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .bars-wrapper {
+      margin: 50px auto 0 auto;
+      width: calc(100% - 15px);
+      max-width: 90%;
     }
 
     .bar {
       color: #666;
-      height: 33px;
-      width: 100%;
+      height: 22px;
       position: relative;
       background-color: #eee;
-      margin: 0 0 15px 0;
+      margin: 0 0 12px 0;
       align-items: flex-end;
-      max-width: 90%;
+      font-size: 7pt;
+
+      span {
+        display: none;
+      }
 
       &.fill {
         @include pos($top: 0, $left: 0);
@@ -513,7 +535,7 @@ section {
         color: #fff;
         height: 100%;
         width: 110px;
-        
+        width: 70px;
       }
 
       &.secondary {
@@ -534,15 +556,19 @@ section {
   &:nth-of-type(3) {
     background: $primary;
 
+    .container {
+      padding: 0;
+    }
+
     .filter {
-      font-size: 13pt;
+      font-size: 6pt;
       font-weight: 600;
-      margin: 0 25px;
-      width: 160px;
-      padding: 7px;
+      width: 85px;
+      padding: 7px 0;
       color: #fff;
       cursor: pointer;
       transition: background-color .5s;
+
 
       &.active {
         background: #fff;
@@ -556,7 +582,6 @@ section {
         background-color: #FFF;
       }
     }
-
 
     .text { 
       @include pos($top: 0, $left: 0);
@@ -580,8 +605,7 @@ section {
 
       .button { 
         @include pos($bottom: 0, $left: 0, $right: 0);
-        border: 2px solid #e21985;
-        
+        border: 2px solid $secondary;
         width: 170px;
         margin: 0 auto;
         font-size: 13pt;
@@ -609,11 +633,12 @@ section {
         }
 
         .card {
-          height: 300px;
-          width: 390px;
+          height: 240px;
+          max-width: 100%;
+          width: 320px;
           cursor: pointer;
           transition: opacity .5s;
-          // box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
+          
         }
 
         &:hover {
@@ -636,11 +661,13 @@ section {
 
     }
   }
+  
   .flex-50-gt-sm { display: block;}
 
 
   //BLOG
   &:nth-of-type(4) {
+    padding: 130px 0 100px 0;
     text-align: left;
 
     .flex {
@@ -659,37 +686,48 @@ section {
       width: 100%;
     }
 
-    .flex-25 {
-      margin-right: 20px;
+    .blog-wrap {
+      margin: 0 0 50px 0;
       padding: 0 2px;
+      width: 100%;
+      transition: opacity .3s ease-in-out;
+      cursor: pointer;
 
-      &:nth-child(1) {
-        .thumb { background: url('http://3.bp.blogspot.com/-rWVR2ymwh_4/VHHxo46NndI/AAAAAAAACdk/8MSEMm8HVCk/s800/pcsmash.jpg') center center/cover }
+      #thumb-1 { background: url('http://3.bp.blogspot.com/-rWVR2ymwh_4/VHHxo46NndI/AAAAAAAACdk/8MSEMm8HVCk/s800/pcsmash.jpg') center center/cover }
+      #thumb-2 { background: url('https://labnotebook.s3.amazonaws.com/2015/Mar/coffee_brain-1426812860957.jpg') center center/cover }
+      #thumb-3 { background: url('https://labnotebook.s3.amazonaws.com/2015/Mar/handlebars-1425510519141.png') center center/cover }
+      #thumb-4 { 
+        right: 0;
+        background: url('https://labnotebook.s3.amazonaws.com/2015/Feb/toolbelt-1424889682039.png') center center/cover;
       }
-      &:nth-child(2) {
-        .thumb { background: url('https://labnotebook.s3.amazonaws.com/2015/Mar/coffee_brain-1426812860957.jpg') center center/cover }
-      }
-      &:nth-child(3) {
-        .thumb { background: url('https://labnotebook.s3.amazonaws.com/2015/Mar/handlebars-1425510519141.png') center center/cover }
-      }
-      &:nth-child(4) {
-        margin-right: 0;
 
-        .thumb { background: url('https://labnotebook.s3.amazonaws.com/2015/Feb/toolbelt-1424889682039.png') center center/cover }
+      &.fade {
+        opacity: 0.4;
+      }
+
+      &.hover {
+        .label {
+          color: $primary;
+        }
+        a {
+          opacity: 1;
+        }
       }
     }
 
     .label {
-      line-height: 22pt;
+      line-height: 14pt;
+      font-size: 12pt;
+      transition: color .3s ease-in-out;
     }
 
     .thumb {
-      height: 200px;
+      height: 150px;
       margin: 0 0 15px 0;
     }
 
     .date {
-      font-size: 8.5pt;
+      font-size: 7pt;
       font-family: 'Open sans';
       margin: 5px 0 0 0;
     }
@@ -697,13 +735,14 @@ section {
     .bar {
       height: 3px;
       width: 25%;
-      background: #04C2C9;
-      margin: 15px 0px;
+      background: $primary;
+      margin: 10px 0px;
     }
 
     .text {
-      font-size: 11pt;
-      line-height: 15pt;
+      font-size: 9pt;
+      line-height: 13pt;
+      max-height: 85px;
     }
   }
 
@@ -726,22 +765,21 @@ section {
     }
 
     form {
-      margin-top: 40px;
-      margin-bottom: 4px;
-      width: 90%;
+      margin: 40px auto 0 auto;
       max-width: 500px;
     }
 
     input, textarea {
       display: block;
       width: 100%;
-      
+      box-sizing: border-box;
       outline: none;
       border: 0;
       padding: 10px 15px;
       background: #1E242C;
       font-size: 12pt;
       margin-bottom: 3px;
+      color: #fff;
     }
 
     textarea {
@@ -750,9 +788,9 @@ section {
 
     .button {
       float: right;
-      margin: 10px -18px;
+      margin: 15px 0;
       font-size: 12pt;
-      padding: 5px 30px;
+      padding: 10px 30px;
     }
   }
 }
@@ -765,7 +803,7 @@ footer {
   .mdi-chevron-double-up {
     position: absolute;
     top: -25px;
-    background: #e21985;
+    background: $secondary;
     font-size: 30pt;
     width: 47px;
     height: 50px;
@@ -802,8 +840,6 @@ footer {
     .icon:hover {
       background: $primary;
       box-shadow: 0 0 0 3px rgba(4,94,201,0.1);
-      -ms-transform: scale(0.9);
-      -webkit-transform: scale(0.9); /* Safari */
       transform: scale(0.9);
 
       .mdi {
@@ -831,7 +867,234 @@ footer {
   }
 }
 
+// BREAKS
+@media screen and (min-width: 600px) {
+
+  body {
+    font-size: 12pt;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .header {
+    margin: 0 0 100px 0;
+    font-size: 30pt;
+  }
+
+  .label {
+    font-size: 18pt;
+  }
+
+  .hex-wrap {
+    height: 100px; width: 100px
+  }
+
+  .slide, .carousel-wrap {
+    height: 450px;
+  }
+
+  .mdi-chevron-left, .mdi-chevron-right {
+    font-size: 25pt !important;
+  }
+
+  .modal-wrap {
+    .modal {
+      top: -6vh;
+      height: initial;
+    }
+    .info-box {
+      padding: 35px 60px 90px 25px;
+    }
+
+    .title {
+      font-size: 22pt;
+      line-height: 30pt;
+    }
+
+    .tag {
+      font-size: 11pt;
+    }
+
+    .detail {
+      font-size: 11pt;
+      line-height: 18pt;
+      margin-top: 15px;
+    }
+
+    .close {
+      right: 25px;
+    }
+
+    .button {
+      left: 25px;
+    }
+  }
+
+  nav {
+    .link-wrap {
+      position: initial;
+      background: none;
+      overflow: visible;
+      height: initial;
+      text-align: left;
+
+      .visible {
+        height: initial;
+      }
+
+      div {
+        margin: 0 20px;
+        display: inline;
+      }
+    }
+
+    .mdi-menu {
+      display: none;
+    }
+  }
+
+  section {
+    line-height: 18pt;
+    padding: 100px 0 130px 0;
+
+    .container {
+      padding: 0 10px;
+    }
+
+    // HOME 
+    &:nth-of-type(1) {
+      .text {
+        font-size: 32pt;
+        line-height: 36pt;
+      }
+
+      .button {
+        padding: 12px 50px 12px 20px;
+        
+        .mdi {
+          top: 14px;
+        }
+      }
+    }
+
+    // ABOUT
+    &:nth-of-type(2) {
+      .label-wrap {
+        .label {
+          margin: 15px 0 5px 0;
+        }
+        > div {
+          padding: 0 15px;
+        }
+      }
+
+      .bullet-wrap {
+        height: 230px;
+      }
+
+      .skills-wrapper {
+
+        > .flex:first-child {
+          padding: 0 50px 0 50px;
+        }
+
+        .me {
+          height: 250px;
+        }
+      }
+
+
+      .bar {
+        height: 28px;
+        margin: 0 0 15px 0;
+        font-size: 11pt;
+
+        span {
+          display: initial;
+        }
+
+        .tag {
+          width: 110px;
+        }
+      }
+
+
+      .hexagon i {
+        font-size: 40pt;
+      }
+    }
+
+    &:nth-of-type(3) {
+      background: $primary;
+
+      .filter {
+        font-size: 11pt;
+        margin: 0 25px;
+        width: 110px;
+      }
+
+
+
+      #gallery {
+        .mix {
+          .card {
+            height: 300px;
+            width: 390px;
+          }
+        }
+      }
+    }
+
+
+    &:nth-of-type(4) {
+      padding: 130px 0 180px 0;
+      .label {
+        line-height: 22pt;
+        font-size: 16pt;
+      }
+
+      .date {
+        font-size: 8.5pt;
+      }
+
+      .bar {
+        margin: 15px 0px;
+      }
+
+      .text {
+        font-size: 11pt;
+        line-height: 15pt;
+      }
+
+      .blog-wrap {
+        width: 400px
+      }
+
+      .thumb {
+        height: 200px;
+      }
+    }
+
+    &:nth-of-type(5) {
+      .button {
+        padding: 5px 30px;
+      }
+    }
+  }
+
+}
+
 @media screen and (min-width: 960px) {
+
+  .canvas {
+    background: #252934;
+  }
+
+  .button {
+    font-size: 16pt;
+  }
 
   .flex.row-gt-sm {
     flex-direction: row;
@@ -846,12 +1109,58 @@ footer {
     box-sizing: border-box;
   }
 
-  // ABOUT
+
+
   section {
+    // ABOUT
     &:nth-of-type(2) {
       .bars-wrapper {
         margin: 0 0 0 0;
       }
+
+      .skills-wrapper {
+        margin: 50px 0 0 0;
+
+        .me {
+          margin: 0;
+        }
+      }
+
+      .bar {
+        max-width: 90%;
+      }
+
+      .bullet-wrap {
+        margin: 0;
+        padding: 0 10px;
+        height: intial;
+      }
     } 
+
+    &:nth-of-type(3) {
+      .filter {
+        font-size: 13pt;
+        width: 160px;
+      }
+    }
+
+    &:nth-of-type(4) {
+      .blog-wrap {
+        width: 400px;
+        margin: 0 0 0 20px;
+      }
+    }
   }
+}
+
+@media screen and (min-width: 1280px) {
+  section {
+    &:nth-of-type(4) {
+      .blog-wrap {
+        width: 270px;
+        margin: 0 0 0 20px;
+      }
+    }
+  }
+
 }

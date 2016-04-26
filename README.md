@@ -1,25 +1,44 @@
 IMPORTANT:
 
-The Mall Content
-
-Responsive Styling!!
+Write Blog Article
 
 
 SECONDARY:
 
-slicker thinner look (e.g. progress bars thinner)
+Get rid of hexes for just icons?
 
 Sass Color Shades
   + Refine site color pallete
 
+Slider category animation for portfolio section
+
 Scroll enter animations (progress-bars too)
 
-Optimize image sizes
-  + redo portfolio thumbnail size (recolor walkertracker whitespace)
-
-Slider animation for portfolio section
-
 change blog thumbnails from links to imgs
+
+Optimize image sizes
+
+New profile pic (me)
+
+carousel bug
+
+
+CLEAN UP:
+
+Remove excess files
+
+Spell Check
+Refactor CSS
+Refactor HTML
+Refactor JS - simplify modal fill function
+
+Browser Retest
+
+LAUNCH: 
+
+Wire up mail form
+  - success / fail message
+
 
 
 MAYBE:
@@ -33,15 +52,3 @@ DL my resume Link?
 Navbar border hue animation?
 
 Customize intro animation
-
-
-
-CLEAN UP:
-
-Remove excess files
-
-Spell Check
-Refactor CSS
-Refactor HTML
-Refactor JS - simplify modal fill function
-Debug!
