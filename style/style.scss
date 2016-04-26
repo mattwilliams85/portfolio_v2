@@ -508,6 +508,11 @@ section {
       margin: 50px auto 0 auto;
       width: calc(100% - 15px);
       max-width: 90%;
+      &.inactive {
+        .fill {
+          width: 0 !important;
+        }
+      }
     }
 
     .bar {
@@ -518,6 +523,12 @@ section {
       margin: 0 0 12px 0;
       align-items: flex-end;
       font-size: 7pt;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) .fill {
+          transition: #{1 + ($i * .1)}s width ease-in-out;
+        }
+      }
 
       span {
         display: none;
@@ -560,19 +571,37 @@ section {
       padding: 0;
     }
 
+    .filter-wrap {
+      position: relative;
+    }
+
     .filter {
       font-size: 6pt;
       font-weight: 600;
-      width: 85px;
-      padding: 7px 0;
+      padding: 0 20px;
       color: #fff;
       cursor: pointer;
       transition: background-color .5s;
+    }
+
+    .float-bar {
+      @include pos($top: 0, $left: 30px, $bottom: 0);
+      margin: auto 0;
+      position: absolute;
+      overflow: hidden;
+      height: 25px; 
+      background: #fff;
+      transition: all .5s ease-in-out;
 
 
-      &.active {
-        background: #fff;
-        color: $primary;
+      .row {
+        @include pos($top: 0, $left: -30px, $bottom: 0);
+        margin: auto 0;
+        transition: left .5s ease-in-out;
+        .filter {
+          color: $primary;
+
+        }
       }
     }
 
@@ -693,12 +722,10 @@ section {
       transition: opacity .3s ease-in-out;
       cursor: pointer;
 
-      #thumb-1 { background: url('http://3.bp.blogspot.com/-rWVR2ymwh_4/VHHxo46NndI/AAAAAAAACdk/8MSEMm8HVCk/s800/pcsmash.jpg') center center/cover }
-      #thumb-2 { background: url('https://labnotebook.s3.amazonaws.com/2015/Mar/coffee_brain-1426812860957.jpg') center center/cover }
-      #thumb-3 { background: url('https://labnotebook.s3.amazonaws.com/2015/Mar/handlebars-1425510519141.png') center center/cover }
-      #thumb-4 { 
-        right: 0;
-        background: url('https://labnotebook.s3.amazonaws.com/2015/Feb/toolbelt-1424889682039.png') center center/cover;
+      @for $i from 1 through 4 {
+        #thumb-#{$i} {
+          background: url('../img/blog-#{$i}.jpg') center center/cover;
+        }
       }
 
       &.fade {
@@ -1026,16 +1053,19 @@ footer {
       }
     }
 
+    // PORTFOLIO
     &:nth-of-type(3) {
       background: $primary;
 
       .filter {
         font-size: 11pt;
         margin: 0 25px;
-        width: 110px;
+        padding: 0 30px;
       }
 
-
+      .float-bar {
+        height: 30px; 
+      }
 
       #gallery {
         .mix {
@@ -1140,7 +1170,7 @@ footer {
     &:nth-of-type(3) {
       .filter {
         font-size: 13pt;
-        width: 160px;
+        padding: 0 40px;
       }
     }
 

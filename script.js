@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+  // RESIZE RESETS
+  $(window).resize(function(){
+    posFilterBar($('.filter').first());
+  })
+
   // NAV POSITION
   var navPos = $('nav').position().top;
   var lastPos = 0;
@@ -7,6 +12,7 @@ $(document).ready(function() {
   $(window).on('scroll', function () {
     var pos = $(window).scrollTop();
     var pos2 = pos + 50;
+    var scrollBottom = pos + $(window).height();
 
     if (pos >= navPos + $('nav').height() && lastPos < pos) {
       $('nav').addClass('fixed');
@@ -16,6 +22,7 @@ $(document).ready(function() {
     }
     lastPos = pos;
 
+    // Link Highlighting
     if (pos2 > $('#home').offset().top)       { highlightLink('home'); }
     if (pos2 > $('#about').offset().top)      { highlightLink('about'); }
     if (pos2 > $('#portfolio').offset().top)  { highlightLink('portfolio'); }
@@ -24,6 +31,11 @@ $(document).ready(function() {
         pos + $(window).height() === $(document).height()) { 
           highlightLink('contact');
     }
+
+    // Page Animations
+    if (scrollBottom > $('.bars-wrapper').offset().top) { 
+      $('.bars-wrapper').removeClass('inactive'); 
+    }
   });
 
   function highlightLink(anchor) {
@@ -31,6 +43,8 @@ $(document).ready(function() {
     $("nav").find('[dest="' + anchor + '"]').addClass('active');
   }
 
+
+  // EVENT HANDLERS
   $('.page-link').click(function() {
     var anchor = $(this).attr("dest");
     $('.link-wrap').removeClass('visible');
@@ -45,7 +59,7 @@ $(document).ready(function() {
 
   $('.mdi-menu').click(function() {
     $('.link-wrap').toggleClass('visible');
-  })
+  });
 
   $('.blog-wrap').hover(  function() {
     $('.blog-wrap').addClass('fade');
@@ -54,6 +68,22 @@ $(document).ready(function() {
     $( this ).removeClass( "hover" );
     $('.blog-wrap').removeClass('fade');
   });
+
+  posFilterBar($('.filter').first());
+
+  $('.filter').click(function(){
+    posFilterBar(this);
+  });
+
+  function posFilterBar(elem) {
+    var origin = $(elem).parent().offset().left;
+    var pos = $(elem).offset().left;
+    $('.float-bar').css({
+      left: pos - origin,
+      width: $(elem).innerWidth()
+    });
+    $('.float-bar .row').css('left', (pos - origin) * -1);
+  }
 
   // GALLERY
   $('#gallery').mixItUp({ });

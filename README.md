@@ -5,27 +5,24 @@ Write Blog Article
 
 SECONDARY:
 
-Get rid of hexes for just icons?
-
 Sass Color Shades
   + Refine site color pallete
 
-Slider category animation for portfolio section
-
-Scroll enter animations (progress-bars too)
-
-change blog thumbnails from links to imgs
+Scroll enter animations 
 
 Optimize image sizes
 
 New profile pic (me)
 
-carousel bug
+carousel bug??
+
+Update 3rd slide for walker
 
 
 CLEAN UP:
 
 Remove excess files
+Organize folders better
 
 Spell Check
 Refactor CSS
@@ -42,6 +39,8 @@ Wire up mail form
 
 
 MAYBE:
+
+Add humor?
 
 Fancy button hover animation?
 
