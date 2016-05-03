@@ -1,7 +1,3 @@
-IMPORTANT:
-
-Write Blog Article
-
 
 SECONDARY:
 
@@ -9,8 +5,6 @@ Sass Color Shades
   + Refine site color pallete
 
 Scroll enter animations 
-
-New profile pic (me)
 
 carousel bug??
 
@@ -40,7 +34,6 @@ Wire up mail form
   - success / fail message
 
 
-
 MAYBE:
 
 Add humor?
@@ -54,3 +47,5 @@ DL my resume Link?
 Navbar border hue animation?
 
 Customize intro animation
+
+Loading animation?
