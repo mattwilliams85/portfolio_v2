@@ -2,7 +2,7 @@ $primary: #04C2C9;
 $primary-dark: #00A1A7;
 $primary-darker: #036367;
 $primary-darkest: #1B242F;
-$secondary: #E21985;
+$secondary: #E31B6D;
 $secondary-dark: #C51675;
 
 @mixin pos($pos: absolute, $top: null, $left: null, $bottom: null, $right: null) {
@@ -28,8 +28,134 @@ $secondary-dark: #C51675;
   src: url('../fonts/Raleway-Bold.ttf');
 }
 
-@keyframes slideIn {
+
+.waypoint {
+  opacity: 0;
+}
+
+.animated {
+  &.slide-up {
+    animation: slideUp .75s ease both;
+  }
+  &.slide-down {
+    animation: slideDown .75s ease both;
+  }
+  &.slide-in-left {
+    animation: slideInLeft .75s ease both;
+  }
+  // &.slide-in-left-big {
+  //   animation: slideInLeftBig .75s ease both;
+  // }
+  &.slide-in-right {
+    animation: slideInRight .75s ease both;
+  }
+  &.flip-in-x {
+    animation: flipInX .75s ease both;
+  }
+  &.fade-in {
+    animation: fadeIn .75s ease both;
+  }
+  &.mix.js {
+    animation: slideInRight .75s ease both;
+  }
+}
+
+
+
+@keyframes fadeIn {
+  100% { opacity: 1 };
+}
+
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-20deg);
+    transform: perspective(400px) rotateY(-20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotateY(-5deg);
+    transform: perspective(400px) rotateY(5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+    opacity: 1;
+  }
+}
+
+@keyframes popDown {
   0% { transform: translateY(-100px) }
+}
+
+@keyframes slideUp {
+  0% { 
+    transform: translateY(300px) 
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% { 
+    transform: translateY(-300px) 
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes slideInLeft {
+  0% { 
+    opacity: 0;
+    transform: translateX(-300px) 
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) 
+  }
+}
+
+// @keyframes slideInLeftBig {
+//   0% { 
+//     opacity: 0;
+//     transform: translateX(-90vw) 
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0) 
+//   }
+// }
+
+@keyframes slideInRight {
+  0% { 
+    opacity: 0;
+    transform: translateX(300px) 
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) 
+  }
 }
 
 @keyframes toBottomFromTop {
@@ -155,22 +281,18 @@ body {
 }
 
 .header {
-  margin: 0 0 75px 0;
   font-size: 25pt;
   font-family: 'raleway-bold';
   position: relative;
   color: #444649;
-  &:before {
-    content: '';
-    width: 70px;
-    height: 4px;
-    background: #444649;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    bottom: -25px;
-  }
+  position: relative;
+}
+
+.header-bar {
+  margin: 25px 0 75px 0;
+  width: 70px;
+  height: 4px;
+  background: #444649;
 }
 
 .label {
@@ -190,7 +312,7 @@ nav {
 
   &.fixed {
     @include pos($pos: fixed, $top: 0, $left: 0);
-    animation: slideIn .5s;
+    animation: popDown .5s;
   }
 
   .link-wrap {
@@ -504,11 +626,12 @@ section {
       z-index: 1;
     }
 
-    .bars-wrapper {
+    .bars-wrap {
       margin: 50px auto 0 auto;
       width: calc(100% - 15px);
       max-width: 90%;
-      &.inactive {
+
+      &:not(.animated) {
         .fill {
           width: 0 !important;
         }
@@ -526,7 +649,7 @@ section {
 
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) .fill {
-          transition: #{1 + ($i * .1)}s width ease-in-out;
+          transition: #{1 + ($i * .1)}s .2s width ease-in-out;
         }
       }
 
@@ -538,6 +661,7 @@ section {
         @include pos($top: 0, $left: 0);
         background-color: $primary-dark;
         padding: 0;
+        opacity: 1;
       }
 
       .tag {
@@ -565,7 +689,7 @@ section {
 
   //PORTFOLIO
   &:nth-of-type(3) {
-    background: #384047;
+    background: #f5f5f5;
 
     .container {
       padding: 0;
@@ -579,7 +703,6 @@ section {
       font-size: 6pt;
       font-weight: 600;
       padding: 0 20px;
-      color: #fff;
       cursor: pointer;
       transition: background-color .5s;
     }
@@ -591,7 +714,7 @@ section {
       overflow: hidden;
       height: 25px; 
       border-radius: 1px;
-      background: #fff;
+      background: $secondary;
       transition: all .5s ease-in-out;
 
 
@@ -600,16 +723,8 @@ section {
         margin: auto 0;
         transition: left .5s ease-in-out;
         .filter {
-          color: $secondary;
-
+          color: #fff;
         }
-      }
-    }
-
-    .header {
-      color: #fff;
-      &:before {
-        background-color: #FFF;
       }
     }
 
@@ -645,7 +760,10 @@ section {
       .mix {
         display: none;
         position: relative;
-        background: #fff;
+
+        .waypoint {
+          background: #fff;
+        }
 
         .button {
           &:hover {
@@ -700,12 +818,8 @@ section {
     padding: 130px 0 100px 0;
     text-align: left;
 
-    .flex {
+    .flex.wrap {
       align-items: flex-start;
-    }
-
-    .header {
-      text-align: center;
     }
 
     .gradient {
@@ -781,11 +895,11 @@ section {
 
     .header {
       color: #fff;
-      margin: 0 0 40px 0;
-      &:before {
-        background: #fff;
-        width: 110px;
-      }
+    }
+    .header-bar {
+      margin: 25px 0 40px 0;
+      background: #fff;
+      width: 110px;
     }
     .highlight {
       font-weight: 600;
@@ -794,7 +908,7 @@ section {
 
     form {
       margin: 40px auto 0 auto;
-      max-width: 500px;
+      min-width: 500px;
     }
 
     input, textarea {
@@ -839,6 +953,7 @@ footer {
     left: 0;
     right: 0;
     margin: 0 auto;
+    cursor: pointer;
   }
 
   .icon-wrap {
@@ -907,8 +1022,11 @@ footer {
   }
 
   .header {
-    margin: 0 0 100px 0;
     font-size: 30pt;
+  }
+
+  .header-bar {
+    margin: 25px 0 100px 0;
   }
 
   .label {
@@ -1002,7 +1120,7 @@ footer {
         padding: 12px 50px 12px 20px;
         
         .mdi {
-          top: 14px;
+          top: 16px;
         }
       }
     }
@@ -1144,7 +1262,7 @@ footer {
   section {
     // ABOUT
     &:nth-of-type(2) {
-      .bars-wrapper {
+      .bars-wrap {
         margin: 0 0 0 0;
       }
 

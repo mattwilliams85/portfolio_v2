@@ -33,9 +33,9 @@ $(document).ready(function() {
     }
 
     // Page Animations
-    if (scrollBottom > $('.bars-wrapper').offset().top) { 
-      $('.bars-wrapper').removeClass('inactive'); 
-    }
+    // if (scrollBottom > $('.bars-wrapper').offset().top) { 
+    //   $('.bars-wrapper').removeClass('inactive'); 
+    // }
   });
 
   function highlightLink(anchor) {
@@ -87,4 +87,31 @@ $(document).ready(function() {
 
   // GALLERY
   $('#gallery').mixItUp({ });
+
+  // SCROLL ANIMATIONS
+  function onScrollInit( items, elemTrigger ) {
+
+    items.each( function() {
+      var elem = $(this),
+          animationClass = elem.attr('data-animation'),
+          animationDelay = elem.attr('data-delay');
+        
+          elem.css({
+            '-webkit-animation-delay':  animationDelay,
+            '-moz-animation-delay':     animationDelay,
+            'animation-delay':          animationDelay
+          });
+
+          var trigger = ( elemTrigger ) ? trigger : elem;
+          
+          trigger.waypoint(function() {
+            elem.addClass('animated').addClass(animationClass);
+            },{
+                triggerOnce: true,
+                offset: '80%'
+          });
+    });
+  }
+
+   setTimeout(function() { onScrollInit($('.waypoint')) }, 10);
 });

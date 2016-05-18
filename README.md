@@ -1,13 +1,7 @@
 
 SECONDARY:
 
-Sass Color Shades
-  + Refine site color pallete
-
 Scroll enter animations 
-
-carousel bug??
-
 
 OPTIMIZE: 
 
@@ -35,6 +29,8 @@ Wire up mail form
 
 
 MAYBE:
+
+carousel bug??
 
 Add humor?
 
