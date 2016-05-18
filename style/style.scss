@@ -1,9 +1,9 @@
-$primary: #E2196C;
-$primary-dark: #C5165F;
+$primary: #04C2C9;
+$primary-dark: #00A1A7;
 $primary-darker: #036367;
 $primary-darkest: #1B242F;
-$secondary: #04C2C9;
-$secondary-dark: #00A1A7;
+$secondary: #E21985;
+$secondary-dark: #C51675;
 
 @mixin pos($pos: absolute, $top: null, $left: null, $bottom: null, $right: null) {
   top: $top;
@@ -151,7 +151,7 @@ body {
 }
 
 .highlight {
-  color: $primary;
+  color: $secondary;
 }
 
 .header {
@@ -184,7 +184,7 @@ nav {
   height: 50px;
   width: 100%;
   background: $primary-darkest;
-  border-bottom: 3px solid $secondary;
+  border-bottom: 3px solid $primary;
   text-align: left;
   z-index: 99;
 
@@ -214,7 +214,7 @@ nav {
       transition: color .5s;
       text-transform: uppercase;
       &:hover {
-        color: $primary;
+        color: $secondary;
       }
     }
   }
@@ -229,7 +229,7 @@ nav {
   }
 
   .active {
-    color: $primary;
+    color: $secondary;
   }
 }
 
@@ -361,7 +361,7 @@ nav {
     font-size: 10pt;
     transition: all .5s;
     cursor: pointer;
-    background: $primary;
+    background: $secondary;
     color: #fff;
     font-weight: 600;
     border: 0;
@@ -377,7 +377,7 @@ nav {
     }
 
     &:hover {
-      color: $primary;
+      color: $secondary;
       background: #fff;
     }
   }
@@ -565,7 +565,7 @@ section {
 
   //PORTFOLIO
   &:nth-of-type(3) {
-    background: #E0E2E4;
+    background: #384047;
 
     .container {
       padding: 0;
@@ -579,7 +579,7 @@ section {
       font-size: 6pt;
       font-weight: 600;
       padding: 0 20px;
-      color: #444649;
+      color: #fff;
       cursor: pointer;
       transition: background-color .5s;
     }
@@ -591,7 +591,7 @@ section {
       overflow: hidden;
       height: 25px; 
       border-radius: 1px;
-      background: $primary;
+      background: #fff;
       transition: all .5s ease-in-out;
 
 
@@ -600,9 +600,16 @@ section {
         margin: auto 0;
         transition: left .5s ease-in-out;
         .filter {
-          color: #fff;
+          color: $secondary;
 
         }
+      }
+    }
+
+    .header {
+      color: #fff;
+      &:before {
+        background-color: #FFF;
       }
     }
 
@@ -628,7 +635,7 @@ section {
 
       .button { 
         @include pos($bottom: 0, $left: 0, $right: 0);
-        border: 2px solid $primary;
+        border: 2px solid $secondary;
         width: 170px;
         margin: 0 auto;
         font-size: 13pt;
@@ -642,7 +649,7 @@ section {
 
         .button {
           &:hover {
-            background: $primary;
+            background: $secondary;
             color: #fff;
           }
         }
@@ -782,7 +789,7 @@ section {
     }
     .highlight {
       font-weight: 600;
-      color: $secondary;
+      color: $primary;
     }
 
     form {
@@ -824,7 +831,7 @@ footer {
   .mdi-chevron-double-up {
     position: absolute;
     top: -25px;
-    background: $primary;
+    background: $secondary;
     font-size: 30pt;
     width: 47px;
     height: 50px;
