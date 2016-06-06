@@ -253,9 +253,9 @@
       </div>
     </div>
 
-    <div id="gallery" class="container flex row wrap">
+    <div id="gallery" class="container flex row wrap waypoint">
       <div class="mix js" data-my-order="1">
-        <div class="waypoint" data-animation="slide-up" data-delay=".1s">
+        <div>
           <div class="card"></div>
           <div class="text">
             <div class="bold">Roambi</div>
@@ -266,7 +266,7 @@
       </div>
 
       <div class="mix rails" data-my-order="1">
-        <div class="waypoint" data-animation="slide-up" data-delay=".2s">
+        <div>
           <div class="card"></div>
           <div class="text">
             <div class="bold">Walker Tracker</div>
@@ -277,7 +277,7 @@
       </div>
 
       <div class="mix node" data-my-order="1">
-        <div class="waypoint" data-animation="slide-up" data-delay=".3s">
+        <div>
           <div class="card"></div>
           <div class="text">
             <div class="bold">MY STAND</div>
@@ -288,7 +288,7 @@
       </div>
 
       <div class="mix js" data-my-order="1">
-        <div class="waypoint" data-animation="slide-up" data-delay=".4s">
+        <div>
           <div class="card"></div>
           <div class="text">
             <div class="bold">NEVER SURRENDER</div>
@@ -299,7 +299,7 @@
       </div>
       
       <div class="mix rails" data-my-order="1">
-        <div class="waypoint" data-animation="slide-up" data-delay=".5s">
+        <div>
           <div class="card"></div>
           <div class="text">
             <div class="bold">Powur</div>
@@ -311,7 +311,7 @@
 
 
       <div class="mix node" data-my-order="1">
-        <div class="waypoint" data-animation="slide-up" data-delay=".6s">
+        <div>
           <div class="card"></div>
           <div class="text">
             <div class="bold">The Mall</div>
@@ -333,21 +333,19 @@
       <div class="flex row wrap">
         <div class="flex row-gt-sm">
           <a href="http://blog.eyecuelab.com/2016/04/29/breaking-your-coders-block/" target="_blank">
-          <div class="blog-wrap">
-            <div class="thumb" id="thumb-1">
+            <div class="blog-wrap waypoint" data-animation="fade-in">
+              <div class="thumb" id="thumb-1"></div>
+              <div class="label bold">Breaking Your Coder's Block</div>
+              <div class="date">APRIL 29, 2016</div>
+              <div class="bar"></div>
+              <div class="text">
+                At one time or another, as a developer, we've all found ourselves hopelessly stuck on a coding issue we had to solve...
+              </div>
             </div>
-            <div class="label bold">Breaking Your Coder's Block</div>
-            <div class="date">APRIL 29, 2016</div>
-            <div class="bar"></div>
-            <div class="text">
-              At one time or another, as a developer, we've all found ourselves hopelessly stuck on a coding issue we had to solve...
-            </div>
-          </div>
           </a>
           <a href="http://blog.eyecuelab.com/2015/03/19/this-is-your-brain-on-caffeine/" target="_blank">
-            <div class="blog-wrap">
-              <div class="thumb" id="thumb-2">
-              </div>
+            <div class="blog-wrap waypoint" data-animation="fade-in" data-delay=".2s">
+              <div class="thumb" id="thumb-2"></div>
               <div class="label bold">!Awake: This is Your Brain on Caffeine</div>
               <div class="date">MARCH 19, 2015</div>
               <div class="bar"></div>
@@ -359,9 +357,8 @@
         </div>
         <div class="flex row-gt-sm">
           <a href="http://blog.eyecuelab.com/2015/03/04/getting-a-handle-on-handlebars/" target="_blank">
-            <div class="blog-wrap">
-              <div class="thumb" id="thumb-3">
-              </div>
+            <div class="blog-wrap waypoint" data-animation="fade-in" data-delay=".4s">
+              <div class="thumb" id="thumb-3"></div>
               <div class="label bold">Getting a Handle on Handlebars</div>
               <div class="date">MARCH 04, 2015</div>
               <div class="bar"></div>
@@ -371,9 +368,8 @@
             </div>
           </a>
           <a href="http://blog.eyecuelab.com/2015/02/23/essential_extensions/" target="_blank">
-            <div class="blog-wrap">
-              <div class="thumb" id="thumb-4">
-              </div>
+            <div class="blog-wrap waypoint" data-animation="fade-in" data-delay=".6s">
+              <div class="thumb" id="thumb-4"></div>
               <div class="label bold">5 Extensions for Your Chrome Toolbelt</div>
               <div class="date">FEBRUARY 23, 2015</div>
               <div class="bar"></div>
@@ -392,8 +388,8 @@
     <div class="container flex">
       <div class="header waypoint" data-animation="slide-in-left">CONTACT</div>
       <div class="header-bar waypoint" data-animation="slide-in-right" data-delay=".5s"></div>
-      <div class="highlight">Have a question or want to work together?</div>
-      <form>
+      <div class="highlight waypoint" data-animation="slide-in-right" data-delay=".75s">Have a question or want to work together?</div>
+      <form class="waypoint" data-animation="wobble">
         <input placeholder="Name">
         <input placeholder="Enter email">
         <textarea placeholder="You Message"></textarea>

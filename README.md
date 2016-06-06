@@ -1,12 +1,15 @@
 
-SECONDARY:
+PRIMARY: 
+Scroll enter animations
 
-Scroll enter animations 
+SECONDARY:
+Animate 'back-to-top' arrow on hover
+Less Canvas Lines for mobile/Tablet
 
 OPTIMIZE: 
 
 Pause Canvas when out of view
-
+Loading Animation
 Optimize image sizes
 
 

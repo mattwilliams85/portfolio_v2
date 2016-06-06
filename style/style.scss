@@ -55,8 +55,20 @@ $secondary-dark: #C51675;
   &.fade-in {
     animation: fadeIn .75s ease both;
   }
-  &.mix.js {
-    animation: slideInRight .75s ease both;
+  &.wobble {
+    animation: wobble 1s both;
+  }
+}
+
+.animated.waypoint#gallery {
+  opacity: 1;
+  .mix {
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) > div {
+        opacity: 0;
+        animation: slideUp .75s #{$i * 0.1}s ease both;
+      }
+    }
   }
 }
 
@@ -169,6 +181,16 @@ $secondary-dark: #C51675;
   51% {
     opacity: 1;
   }
+}
+
+@keyframes wobble {
+  0%   {   opacity: 0 }
+  15%  { transform:translate3d(-25%,0,0) rotate3d(0,0,1,-5deg) }
+  30%  { transform:translate3d(20%,0,0) rotate3d(0,0,1,3deg) }
+  45%  { transform:translate3d(-15%,0,0) rotate3d(0,0,1,-3deg) }
+  60%  { transform:translate3d(10%,0,0) rotate3d(0,0,1,2deg) }
+  75%  { transform:translate3d(-5%,0,0) rotate3d(0,0,1,-1deg) }
+  100% {   opacity: 1 }
 }
 
 a {
@@ -690,6 +712,7 @@ section {
   //PORTFOLIO
   &:nth-of-type(3) {
     background: #f5f5f5;
+    min-height: 800px;
 
     .container {
       padding: 0;

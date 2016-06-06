@@ -88,14 +88,19 @@ $(document).ready(function() {
   // GALLERY
   $('#gallery').mixItUp({ });
 
+  function mixClear() {
+    console.log('clear!!')
+    setTimeout(function() { $('#gallery').removeClass('waypoint') }, 2000);
+  }
+
   // SCROLL ANIMATIONS
   function onScrollInit( items, elemTrigger ) {
-
     items.each( function() {
       var elem = $(this),
           animationClass = elem.attr('data-animation'),
           animationDelay = elem.attr('data-delay');
-        
+          
+
           elem.css({
             '-webkit-animation-delay':  animationDelay,
             '-moz-animation-delay':     animationDelay,
@@ -106,6 +111,7 @@ $(document).ready(function() {
           
           trigger.waypoint(function() {
             elem.addClass('animated').addClass(animationClass);
+            if (elem.get(0).id === 'gallery') mixClear(); //OPTIONAL
             },{
                 triggerOnce: true,
                 offset: '80%'
