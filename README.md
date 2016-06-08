@@ -1,20 +1,14 @@
 
-PRIMARY: 
-Scroll enter animations
-
 SECONDARY:
 Animate 'back-to-top' arrow on hover
 Less Canvas Lines for mobile/Tablet
 
 OPTIMIZE: 
-
 Pause Canvas when out of view
 Loading Animation
 Optimize image sizes
 
-
 CLEAN UP:
-
 Remove excess files
 Organize folders better
 
@@ -26,7 +20,6 @@ Refactor JS - simplify modal fill function
 Browser Retest
 
 LAUNCH: 
-
 Wire up mail form
   - success / fail message
 
