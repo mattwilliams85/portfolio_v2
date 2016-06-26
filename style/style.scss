@@ -28,53 +28,6 @@ $secondary-dark: #C51675;
   src: url('../fonts/Raleway-Bold.ttf');
 }
 
-
-.waypoint {
-  opacity: 0;
-}
-
-.animated {
-  &.slide-up {
-    animation: slideUp .75s ease both;
-  }
-  &.slide-down {
-    animation: slideDown .75s ease both;
-  }
-  &.slide-in-left {
-    animation: slideInLeft .75s ease both;
-  }
-  // &.slide-in-left-big {
-  //   animation: slideInLeftBig .75s ease both;
-  // }
-  &.slide-in-right {
-    animation: slideInRight .75s ease both;
-  }
-  &.flip-in-x {
-    animation: flipInX .75s ease both;
-  }
-  &.fade-in {
-    animation: fadeIn .75s ease both;
-  }
-  &.pop-in {
-    animation: popIn 1s both;
-  }
-}
-
-.animated.waypoint#gallery {
-  opacity: 1;
-  .mix {
-    @for $i from 1 through 6 {
-      &:nth-child(#{$i}) > div {
-        opacity: 0;
-        animation: slideUp .75s #{$i * 0.1}s ease both;
-      }
-    }
-  }
-}
-
-
-
-
 @keyframes fadeIn {
   100% { opacity: 1 };
 }
@@ -949,7 +902,7 @@ section {
       min-width: 500px;
     }
 
-    input, textarea {
+    input[type="text"], input[type="email"], textarea {
       display: block;
       width: 100%;
       box-sizing: border-box;
@@ -964,13 +917,51 @@ section {
 
     textarea {
       min-height: 150px;
+      margin-bottom: 5px;
     }
 
     .button {
       float: right;
-      margin: 15px 0;
+      margin: 5px 0 0 0;
       font-size: 12pt;
       padding: 10px 30px;
+      color: #fff;
+      background: transparent;
+      outline: 0;
+
+      &:hover {
+        background: $primary;
+      }
+    }
+
+    #success {
+      height: 0;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      transition: height .25s;
+
+      &.expand {
+        height: 36px;
+      }
+
+      div {
+        background: #04c986;
+        color: #157051;
+        font-size: 10pt;
+        font-weight: 600;
+        padding: 5px 0;
+        border: 1px solid #157c59;
+      }
+    }
+
+    #close {
+      position: absolute;
+      padding: 5px 15px;
+      font-size: 12pt;
+      font-weight: 600;
+      right: 0;
+      cursor: pointer;
     }
   }
 }
@@ -1262,17 +1253,54 @@ footer {
         height: 200px;
       }
     }
-
-    &:nth-of-type(5) {
-      .button {
-        padding: 5px 30px;
-      }
-    }
   }
 
 }
 
 @media screen and (min-width: 960px) {
+
+  .waypoint {
+    opacity: 0;
+  }
+
+  .animated.waypoint#gallery {
+    opacity: 1;
+    .mix {
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) > div {
+          opacity: 0;
+          animation: slideUp .75s #{$i * 0.1}s ease both;
+        }
+      }
+    }
+  }
+
+  .animated {
+    &.slide-up {
+      animation: slideUp .75s ease both;
+    }
+    &.slide-down {
+      animation: slideDown .75s ease both;
+    }
+    &.slide-in-left {
+      animation: slideInLeft .75s ease both;
+    }
+    // &.slide-in-left-big {
+    //   animation: slideInLeftBig .75s ease both;
+    // }
+    &.slide-in-right {
+      animation: slideInRight .75s ease both;
+    }
+    &.flip-in-x {
+      animation: flipInX .75s ease both;
+    }
+    &.fade-in {
+      animation: fadeIn .75s ease both;
+    }
+    &.pop-in {
+      animation: popIn 1s both;
+    }
+  }
 
   .canvas {
     background: #252934;

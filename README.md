@@ -1,7 +1,7 @@
 
 SECONDARY:
 Animate 'back-to-top' arrow on hover
-Less Canvas Lines for mobile/Tablet
+Gallery background needs to be white
 
 OPTIMIZE: 
 Pause Canvas when out of view
@@ -19,25 +19,14 @@ Refactor JS - simplify modal fill function
 
 Browser Retest
 
-LAUNCH: 
-Wire up mail form
-  - success / fail message
-
-
 MAYBE:
-
 carousel bug??
-
+Invision Color Scheme?
 Add humor?
-
 Fancy button hover animation?
-
 Gifs for powur homepage and neversurrender preview? 
-
 DL my resume Link?
-
 Navbar border hue animation?
-
 Customize intro animation
-
+Interactive intro animation?
 Loading animation?

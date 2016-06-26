@@ -1,13 +1,19 @@
-$(document).ready(function() {
+$(function() {
 
   // RESIZE RESETS
   $(window).resize(function(){
     posFilterBar($('.filter').first());
   });
 
+  window.addEventListener('scroll', function() {
+
+  }, false);
+
   // NAV POSITION
   var navPos = $('nav').position().top;
   var lastPos = 0;
+  var body = document.body;
+  var timer;
 
   $(window).on('scroll', function () {
     var pos = $(window).scrollTop();
@@ -32,10 +38,15 @@ $(document).ready(function() {
           highlightLink('contact');
     }
 
-    // Page Animations
-    // if (scrollBottom > $('.bars-wrapper').offset().top) { 
-    //   $('.bars-wrapper').removeClass('inactive'); 
-    // }
+    // Prevent Hover on Scroll
+    clearTimeout(timer);
+    if(!body.classList.contains('disable-hover')) {
+      body.classList.add('disable-hover')
+    }
+    
+    timer = setTimeout(function(){
+      body.classList.remove('disable-hover')
+    },500);
   });
 
   function highlightLink(anchor) {
@@ -89,7 +100,6 @@ $(document).ready(function() {
   $('#gallery').mixItUp({ });
 
   function mixClear() {
-    console.log('clear!!')
     setTimeout(function() { $('#gallery').removeClass('waypoint') }, 2000);
   }
 
@@ -99,7 +109,6 @@ $(document).ready(function() {
       var elem = $(this),
           animationClass = elem.attr('data-animation'),
           animationDelay = elem.attr('data-delay');
-          
 
           elem.css({
             '-webkit-animation-delay':  animationDelay,
@@ -119,5 +128,25 @@ $(document).ready(function() {
     });
   }
 
-   setTimeout(function() { onScrollInit($('.waypoint')) }, 10);
+  setTimeout(function() { onScrollInit($('.waypoint')) }, 10);
+
+  // CONTACT FORM
+  $('#contact-form').submit(function(e) {
+    e.preventDefault(); 
+
+      $.ajax({
+          url: "https://formspree.io/mattwilliams85@gmail.com", 
+          method: "POST",
+          data: { message: $('form').serialize() },
+          dataType: "json"
+      }).done(function(response) {
+          $('#success').addClass('expand');
+          $('#contact-form').find("input[type=text], input[type=email], textarea").val("");
+      });
+  });
+
+  $('#close').click(function() {
+    $('#success').removeClass('expand');
+  })
+
 });

@@ -390,13 +390,16 @@
     </svg>
     <div class="container flex">
       <div class="header waypoint" data-animation="slide-in-left">CONTACT</div>
-      <div class="header-bar waypoint" data-animation="slide-in-right" data-delay=".5s"></div>
-      <div class="highlight waypoint" data-animation="slide-in-right" data-delay=".75s">Have a question or want to work together?</div>
-      <form class="waypoint" data-animation="pop-in" data-delay="1s">
-        <input placeholder="Name">
-        <input placeholder="Enter email">
-        <textarea placeholder="You Message"></textarea>
-        <div class="button">SUBMIT</div>
+      <div class="header-bar waypoint" data-animation="slide-in-right" data-delay=".25s"></div>
+      <div class="highlight waypoint" data-animation="slide-in-right" data-delay=".5s">Have a question or want to work together?</div>
+      <form class="waypoint" data-animation="pop-in" data-delay=".5s" id="contact-form">
+        <input placeholder="Name" type="text" name="name" required>
+        <input placeholder="Enter email" type="email" name="email" required>
+        <textarea placeholder="Your Message" type="text" name="message"></textarea>
+        <div id="success">
+          <div>Your message was sent successfully. Thanks!<span id="close" class="mdi mdi-close"></span></div>
+        </div>
+        <input class="button" type="submit" id="submit" value=SUBMIT>
       </form>
     </div>
   </section>
