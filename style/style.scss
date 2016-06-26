@@ -171,6 +171,10 @@ body {
   overflow-x: hidden;
 }
 
+.disable-hover {
+  pointer-events: none;
+}
+
 .overflow-wrap {
   overflow-x: hidden;
 }

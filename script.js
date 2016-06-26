@@ -12,8 +12,7 @@ $(function() {
   // NAV POSITION
   var navPos = $('nav').position().top;
   var lastPos = 0;
-  var body = document.body;
-  var timer;
+  var lockTimer 
 
   $(window).on('scroll', function () {
     var pos = $(window).scrollTop();
@@ -39,14 +38,14 @@ $(function() {
     }
 
     // Prevent Hover on Scroll
-    clearTimeout(timer);
-    if(!body.classList.contains('disable-hover')) {
-      body.classList.add('disable-hover')
+    clearTimeout(lockTimer);
+    if(!$('body').hasClass('disable-hover')) {
+      $('body').addClass('disable-hover')
     }
     
-    timer = setTimeout(function(){
-      body.classList.remove('disable-hover')
-    },500);
+    lockTimer = setTimeout(function(){
+      $('body').removeClass('disable-hover')
+    }, 500);
   });
 
   function highlightLink(anchor) {
