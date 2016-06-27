@@ -770,7 +770,7 @@ section {
         .card {
           height: 240px;
           max-width: 100%;
-          width: 320px;
+          width: calc(50vw - 8px);
           cursor: pointer;
           transition: opacity .5s;
           
@@ -902,7 +902,7 @@ section {
 
     form {
       margin: 40px auto 0 auto;
-      min-width: 500px;
+      min-width: 95%;
     }
 
     input[type="text"], input[type="email"], textarea {
@@ -1043,6 +1043,14 @@ footer {
 }
 
 // BREAKS
+@media screen and (max-width: 400px) {
+  section:nth-of-type(3) {
+    #gallery .mix .card {
+      width: 100vw;
+    }
+  }
+}
+
 @media screen and (min-width: 600px) {
 
   body {
@@ -1209,7 +1217,7 @@ footer {
 
       .filter {
         font-size: 11pt;
-        margin: 0 25px;
+        margin: 0 15px;
         padding: 0 30px;
       }
 
@@ -1221,7 +1229,6 @@ footer {
         .mix {
           .card {
             height: 300px;
-            width: 390px;
           }
         }
       }
@@ -1254,6 +1261,12 @@ footer {
 
       .thumb {
         height: 200px;
+      }
+    }
+
+    &:nth-of-type(5) {
+      form {
+        min-width: 500px;
       }
     }
   }
@@ -1355,9 +1368,13 @@ footer {
     } 
 
     &:nth-of-type(3) {
+      #gallery .mix .card {
+        width: 390px;
+      }
       .filter {
         font-size: 13pt;
         padding: 0 40px;
+        margin: 0 25px;
       }
     }
 
