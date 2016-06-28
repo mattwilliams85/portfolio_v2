@@ -3,6 +3,7 @@ $primary-dark: #00A1A7;
 $primary-darker: #036367;
 $primary-darkest: #1B242F;
 $secondary: #E31B6D;
+$secondary-light: #fb1f79;
 $secondary-dark: #C51675;
 
 @mixin pos($pos: absolute, $top: null, $left: null, $bottom: null, $right: null) {
@@ -314,7 +315,7 @@ nav {
     text-align: center;
 
     &.visible {
-      height: 183px;
+      height: 165px;
     }
 
     div {
@@ -986,6 +987,10 @@ footer {
     right: 0;
     margin: 0 auto;
     cursor: pointer;
+    transition: background .5s;
+    &:hover {
+      background: $secondary-light;
+    }
   }
 
   .icon-wrap {

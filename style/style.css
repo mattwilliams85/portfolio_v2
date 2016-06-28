@@ -7,24 +7,6 @@
 @font-face {
   font-family: 'Raleway-bold';
   src: url("../fonts/Raleway-Bold.ttf"); }
-.waypoint {
-  opacity: 0; }
-
-.animated.slide-up {
-  animation: slideUp .75s ease both; }
-.animated.slide-down {
-  animation: slideDown .75s ease both; }
-.animated.slide-in-left {
-  animation: slideInLeft .75s ease both; }
-.animated.slide-in-right {
-  animation: slideInRight .75s ease both; }
-.animated.flip-in-x {
-  animation: flipInX .75s ease both; }
-.animated.fade-in {
-  animation: fadeIn .75s ease both; }
-.animated.mix.js {
-  animation: slideInRight .75s ease both; }
-
 @keyframes fadeIn {
   100% {
     opacity: 1; } }
@@ -88,6 +70,17 @@
     transform: translateY(-100%); }
   51% {
     opacity: 1; } }
+@keyframes popIn {
+  0% {
+    transform: scale(0); }
+  60% {
+    opacity: 1;
+    transform: scale(1.05); }
+  80% {
+    transform: scale(0.95); }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
 a {
   text-decoration: none;
   color: inherit; }
@@ -101,6 +94,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden; }
+
+.disable-hover {
+  pointer-events: none; }
 
 .overflow-wrap {
   overflow-x: hidden; }
@@ -220,7 +216,7 @@ nav {
     transition: height .3s ease-out;
     text-align: center; }
     nav .link-wrap.visible {
-      height: 183px; }
+      height: 165px; }
     nav .link-wrap div {
       margin: 15px 20px;
       cursor: pointer;
@@ -585,7 +581,7 @@ section {
         section:nth-of-type(3) #gallery .mix .card {
           height: 240px;
           max-width: 100%;
-          width: 320px;
+          width: calc(50vw - 8px);
           cursor: pointer;
           transition: opacity .5s; }
         section:nth-of-type(3) #gallery .mix:hover .card {
@@ -651,7 +647,8 @@ section {
       max-height: 85px; }
   section:nth-of-type(5) {
     background: #252934;
-    color: #fff; }
+    color: #fff;
+    padding-top: 175px; }
     section:nth-of-type(5) .header {
       color: #fff; }
     section:nth-of-type(5) .header-bar {
@@ -661,10 +658,14 @@ section {
     section:nth-of-type(5) .highlight {
       font-weight: 600;
       color: #04C2C9; }
+    section:nth-of-type(5) svg {
+      position: absolute;
+      top: 0;
+      left: 0; }
     section:nth-of-type(5) form {
       margin: 40px auto 0 auto;
-      min-width: 500px; }
-    section:nth-of-type(5) input, section:nth-of-type(5) textarea {
+      min-width: 95%; }
+    section:nth-of-type(5) input[type="text"], section:nth-of-type(5) input[type="email"], section:nth-of-type(5) textarea {
       display: block;
       width: 100%;
       box-sizing: border-box;
@@ -676,12 +677,40 @@ section {
       margin-bottom: 3px;
       color: #fff; }
     section:nth-of-type(5) textarea {
-      min-height: 150px; }
+      min-height: 150px;
+      margin-bottom: 5px; }
     section:nth-of-type(5) .button {
       float: right;
-      margin: 15px 0;
+      margin: 5px 0 0 0;
       font-size: 12pt;
-      padding: 10px 30px; }
+      padding: 10px 30px;
+      color: #fff;
+      background: transparent;
+      outline: 0; }
+      section:nth-of-type(5) .button:hover {
+        background: #04C2C9; }
+    section:nth-of-type(5) #success {
+      height: 0;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      transition: height .25s; }
+      section:nth-of-type(5) #success.expand {
+        height: 36px; }
+      section:nth-of-type(5) #success div {
+        background: #04c986;
+        color: #157051;
+        font-size: 10pt;
+        font-weight: 600;
+        padding: 5px 0;
+        border: 1px solid #157c59; }
+    section:nth-of-type(5) #close {
+      position: absolute;
+      padding: 5px 15px;
+      font-size: 12pt;
+      font-weight: 600;
+      right: 0;
+      cursor: pointer; }
 
 footer {
   background: #1B242F;
@@ -698,7 +727,10 @@ footer {
     left: 0;
     right: 0;
     margin: 0 auto;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: background .5s; }
+    footer .mdi-chevron-double-up:hover {
+      background: #fb1f79; }
   footer .icon-wrap .icon {
     overflow: hidden;
     transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
@@ -734,6 +766,9 @@ footer {
       font-family: 'Open Sans';
       color: #E31B6D; }
 
+@media screen and (max-width: 400px) {
+  section:nth-of-type(3) #gallery .mix .card {
+    width: 100vw; } }
 @media screen and (min-width: 600px) {
   body {
     font-size: 12pt; }
@@ -827,13 +862,12 @@ footer {
       font-size: 40pt; }
     section:nth-of-type(3) .filter {
       font-size: 11pt;
-      margin: 0 25px;
+      margin: 0 15px;
       padding: 0 30px; }
     section:nth-of-type(3) .float-bar {
       height: 30px; }
     section:nth-of-type(3) #gallery .mix .card {
-      height: 300px;
-      width: 390px; }
+      height: 300px; }
     section:nth-of-type(4) {
       padding: 130px 0 180px 0; }
       section:nth-of-type(4) .label {
@@ -850,9 +884,48 @@ footer {
         width: 400px; }
       section:nth-of-type(4) .thumb {
         height: 200px; }
-    section:nth-of-type(5) .button {
-      padding: 5px 30px; } }
+    section:nth-of-type(5) form {
+      min-width: 500px; } }
 @media screen and (min-width: 960px) {
+  .waypoint {
+    opacity: 0; }
+
+  .animated.waypoint#gallery {
+    opacity: 1; }
+    .animated.waypoint#gallery .mix:nth-child(1) > div {
+      opacity: 0;
+      animation: slideUp 0.75s 0.1s ease both; }
+    .animated.waypoint#gallery .mix:nth-child(2) > div {
+      opacity: 0;
+      animation: slideUp 0.75s 0.2s ease both; }
+    .animated.waypoint#gallery .mix:nth-child(3) > div {
+      opacity: 0;
+      animation: slideUp 0.75s 0.3s ease both; }
+    .animated.waypoint#gallery .mix:nth-child(4) > div {
+      opacity: 0;
+      animation: slideUp 0.75s 0.4s ease both; }
+    .animated.waypoint#gallery .mix:nth-child(5) > div {
+      opacity: 0;
+      animation: slideUp 0.75s 0.5s ease both; }
+    .animated.waypoint#gallery .mix:nth-child(6) > div {
+      opacity: 0;
+      animation: slideUp 0.75s 0.6s ease both; }
+
+  .animated.slide-up {
+    animation: slideUp .75s ease both; }
+  .animated.slide-down {
+    animation: slideDown .75s ease both; }
+  .animated.slide-in-left {
+    animation: slideInLeft .75s ease both; }
+  .animated.slide-in-right {
+    animation: slideInRight .75s ease both; }
+  .animated.flip-in-x {
+    animation: flipInX .75s ease both; }
+  .animated.fade-in {
+    animation: fadeIn .75s ease both; }
+  .animated.pop-in {
+    animation: popIn 1s both; }
+
   .canvas {
     background: #252934; }
 
@@ -882,9 +955,12 @@ footer {
     margin: 0;
     padding: 0 10px;
     height: intial; }
+  section:nth-of-type(3) #gallery .mix .card {
+    width: 390px; }
   section:nth-of-type(3) .filter {
     font-size: 13pt;
-    padding: 0 40px; }
+    padding: 0 40px;
+    margin: 0 25px; }
   section:nth-of-type(4) .blog-wrap {
     width: 400px;
     margin: 0 0 0 20px; } }

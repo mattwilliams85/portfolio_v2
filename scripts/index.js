@@ -1,13 +1,20 @@
 $(function() {
 
+  var isMobile;
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+   isMobile = true;
+  }
+
   // RESIZE RESETS
   $(window).resize(function(){
     posFilterBar($('.filter').first());
   });
 
-  window.addEventListener('scroll', function() {
+  // Sticky Nav on Mobile
+  if (isMobile) {
+    $('nav').css('animation','none').addClass('fixed');
+  }
 
-  }, false);
 
   // NAV POSITION
   var navPos = $('nav').position().top;
@@ -15,17 +22,20 @@ $(function() {
   var lockTimer 
 
   $(window).on('scroll', function () {
+
     var pos = $(window).scrollTop();
     var pos2 = pos + 50;
     var scrollBottom = pos + $(window).height();
 
-    if (pos >= navPos + $('nav').height() && lastPos < pos) {
-      $('nav').addClass('fixed');
-    }
-    if (pos < navPos && lastPos > pos) {
-      $('nav').removeClass('fixed');
-    }
-    lastPos = pos;
+    if (!isMobile) {
+      if (pos >= navPos + $('nav').height() && lastPos < pos) {
+        $('nav').addClass('fixed');
+      }
+      if (pos < navPos && lastPos > pos) {
+        $('nav').removeClass('fixed');
+      }
+      lastPos = pos;
+    } 
 
     // Link Highlighting
     if (pos2 > $('#home').offset().top)       { highlightLink('home'); }
