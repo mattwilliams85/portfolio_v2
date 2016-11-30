@@ -66,6 +66,10 @@ function floatySpace() {
       if (type=="move") {
         mouse.set(x,y);
       }
+    },
+
+    onTouchAction: function(type, x, y, evt) {
+      this.onMouseAction( type, x, y );
     }
   });
 
