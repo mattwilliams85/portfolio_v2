@@ -107,7 +107,6 @@ body {
   left: 0;
   width: 100vw;
   height: 100%;
-  z-index: -1;
   background: url("../img/filler.png") center center/cover; }
 
 .button {
@@ -387,7 +386,9 @@ section {
     section:nth-of-type(1) .text {
       margin: 0 0 20px 0;
       font-size: 16pt;
-      line-height: 20pt; }
+      line-height: 20pt;
+      z-index: 1;
+      pointer-events: none; }
     section:nth-of-type(1) .hexagon {
       transition: transform .9s ease-in-out; }
       section:nth-of-type(1) .hexagon:hover {
